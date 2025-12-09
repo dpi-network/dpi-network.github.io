@@ -1,6 +1,6 @@
 ---
 type: 'slide'
-title: 'This is slide'
+title: 'Cambridge Policy Hackathon'
 cover: 'https://raw.githubusercontent.com/foxihd/hugo-et-hd/master/static/svg/flowlines/28.svg'
 weight: 1
 params:
@@ -8,7 +8,12 @@ params:
     target: 'https://github.com/foxihd/hugo-brewm'
 ---
 
-This demonstrates an example of three slide item. The navigation will change when there are three or more slides.
+Keep an eye out for our upcoming hackathon! 
 
-This is slide layout with cover image in frontmatter.
-For a minimalist home page without a slide and flowlines, see the [Indonesian homepage](https://foxihd.github.io/hugo-brewm/id/).
+From 1-3 May 2026, the Cambridge Policy Hackathon will be held, expecting up to around 200 participants. You can still sign up here: LINK. 
+
+
+
+
+
+*Scroll to the right for more*
