@@ -78,12 +78,25 @@ jobs:
           restore-keys:
             hugo-
       - name: Build the site
+        env:
+          HUGO_ENV: production
         run: |
           hugo \
             --gc \
             --minify \
+            --environment production \
             --baseURL "https://dpi.network/" \
             --cacheDir "${{ runner.temp }}/hugo_cache"
+      - name: Verify CSS paths
+        run: |
+          echo "Checking CSS references in built HTML..."
+          if grep -r "href.*css" public/en/index.html | grep -v "https://dpi.network"; then
+            echo "WARNING: Found CSS paths that don't use dpi.network domain"
+            grep "href.*css" public/en/index.html | head -5
+          else
+            echo "✓ CSS paths look correct"
+            grep "href.*css" public/en/index.html | head -3
+          fi
       - name: Cache save
         id: cache-save
         uses: actions/cache/save@v4
