@@ -1,7 +1,7 @@
 ## Base URL for the site
 baseURL = 'https://dpi.network/'
 ## Site title
-title = 'DPIN'
+title = 'Data for Public Impact Network'
 ## Use hugo-brewm theme
 theme = 'hugo-brewm'
 ## Enable Git information for pages, (e.g. lastMod date information)
@@ -45,11 +45,11 @@ ignoreFiles = [ '\.redacted', '\.old','\.bak', '\.tmp', '\.swp', '\.DS_Store']
 ## Site parameters
 [params]
     ## Site title
-    title = "Example"
+    title = "DPI Network"
     ## Site description
-    description = "An ExampleSite built with Hugo and Hugo-Brewm theme"
+    description = "Data for Public Impact Network"
     ## Copyright notice on colophon
-    copyright = "Copyright 2025 © Author"
+    copyright = "Copyright 2025 © DPI Network"
     ## Hide "powered by hugo" on colophon
     HideHugoCredit = true
     ## Enable extended metadata (social cards)
@@ -75,9 +75,9 @@ ignoreFiles = [ '\.redacted', '\.old','\.bak', '\.tmp', '\.swp', '\.DS_Store']
     ## Author information
     [params.author]
         ## site author's name
-        name = 'Author Name'
+        name = 'DPI Network'
         ## Author's email
-        email = 'email@example.com'
+        email = 'info@dpi.network'
         ## Other method to customize author and co-authors information
         coauthor = [
             {name = "A.N. Other", bio = "Lorem ipsum dolor sit amet."}
