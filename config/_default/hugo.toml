@@ -1,7 +1,7 @@
 ## Base URL for the site
 baseURL = 'https://dpi.network/'
 ## Site title
-title = 'Data for Public Impact Network'
+title = 'DATA FOR PUBLIC IMPACT NETWORK'
 ## Use hugo-brewm theme
 theme = 'hugo-brewm'
 ## Enable Git information for pages, (e.g. lastMod date information)

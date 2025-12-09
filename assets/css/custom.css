@@ -91,6 +91,57 @@ body[data-contrast="less"] #bionReadSwitch:checked + label {
     color: var(--ac);
 }
 
+/* Responsive logo text: Show "DPIN" on mobile, full text on desktop */
+@media (max-width: 768px) {
+    #logo #logotype {
+        display: none;
+    }
+    
+    #logo a::after {
+        content: "DPIN";
+        display: inline-block;
+        text-transform: uppercase;
+        letter-spacing: 0.2ex;
+        font-family: var(--sf, sans-serif);
+        font-size: calc(27pt * var(--fontScale, 1));
+        font-weight: 550;
+        color: var(--off, currentColor);
+        margin-left: 0.5rem;
+        /* Replicate the stroke animation effect from the original logo */
+        -webkit-text-stroke: 1px var(--off, currentColor);
+        text-stroke: 1px var(--off, currentColor);
+        animation: dash-text 30s infinite alternate;
+    }
+    
+    #logo a:focus::after {
+        animation: none;
+        -webkit-text-stroke: none;
+        text-stroke: none;
+        outline-color: var(--off);
+    }
+}
+
+@keyframes dash-text {
+    0% {
+        -webkit-text-fill-color: var(--off, currentColor);
+        color: var(--off, currentColor);
+        -webkit-text-stroke-color: var(--off, currentColor);
+        -webkit-text-stroke-width: 1px;
+    }
+    100% {
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        -webkit-text-stroke-color: var(--off, currentColor);
+        -webkit-text-stroke-width: 1px;
+    }
+}
+
+@media (min-width: 769px) {
+    #logo a::after {
+        display: none;
+    }
+}
+
 @media (max-width: 640px) {
     body[data-contrast="less"] #top-nav-screen {
         outline: unset;
