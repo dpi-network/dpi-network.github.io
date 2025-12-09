@@ -156,11 +156,11 @@ enableRobotsTXT = true
 
     ## Logo configuration
     [params.logo]
-        ## Light mode logo mark
-        # logoMark = 'https://example.com/logoMark.svg'
-        ## Dark mode logo mark
-        # logoMarkDark = 'https://example.com/logoMarkDark.svg'
-        ## Enable logo type
+        ## Light mode logo mark (leave empty to hide)
+        logoMark = ''
+        ## Dark mode logo mark (leave empty to hide)
+        logoMarkDark = ''
+        ## Enable logo type/text; set false to hide logo area entirely
         logoType = true
 
     ## Feed display settings
@@ -186,7 +186,7 @@ enableRobotsTXT = true
         ## Disable paragraph indentation
         noIndent = false
         ## Use sans-serif fonts as default
-        sfdefault = false
+        sfdefault = true
         ## Show colophon section (including QR code)
         colophon = true
         ## disable redaction history
@@ -214,7 +214,7 @@ enableRobotsTXT = true
         ## Serif font selection
         roman = 'crimson'
         ## Sans-serif font selection
-        sans = 'inter'
+        sans = 'montserrat'
         ## use typeface stored in local server (pleaase download font's uri first)
         localHost = false
 

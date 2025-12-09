@@ -1,4 +1,0 @@
----
-title: 'semai'
-translationKey: seedling
----

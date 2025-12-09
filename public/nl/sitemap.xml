@@ -1,0 +1,46 @@
+
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://localhost:1313/nl/author/</loc>
+    
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="http://localhost:1313/en/author/" />
+    <xhtml:link rel="alternate" hreflang="nl-NL" href="http://localhost:1313/nl/author/" />
+  </url>
+  <url>
+    <loc>http://localhost:1313/nl/categories/</loc>
+    
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="http://localhost:1313/en/categories/" />
+    <xhtml:link rel="alternate" hreflang="nl-NL" href="http://localhost:1313/nl/categories/" />
+  </url>
+  <url>
+    <loc>http://localhost:1313/nl/</loc>
+    
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="http://localhost:1313/en/" />
+    <xhtml:link rel="alternate" hreflang="nl-NL" href="http://localhost:1313/nl/" />
+  </url>
+  <url>
+    <loc>http://localhost:1313/nl/series/</loc>
+    
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="http://localhost:1313/en/series/" />
+    <xhtml:link rel="alternate" hreflang="nl-NL" href="http://localhost:1313/nl/series/" />
+  </url>
+  <url>
+    <loc>http://localhost:1313/nl/stage/</loc>
+    
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="http://localhost:1313/en/stage/" />
+    <xhtml:link rel="alternate" hreflang="nl-NL" href="http://localhost:1313/nl/stage/" />
+  </url>
+  <url>
+    <loc>http://localhost:1313/nl/tags/</loc>
+    
+    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="http://localhost:1313/en/tags/" />
+    <xhtml:link rel="alternate" hreflang="nl-NL" href="http://localhost:1313/nl/tags/" />
+  </url>
+</urlset>

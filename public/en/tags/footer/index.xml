@@ -6,15 +6,15 @@
     <description>Recent Posts in Footer on Data for Public Impact Network</description>
     <generator>Hugo 0.151.2</generator>
     <language>en-GB</language>
-    <managingEditor>email@example.com (Author Name)</managingEditor>
-    <webMaster>email@example.com (Author Name)</webMaster>
-    <lastBuildDate>Tue, 09 Dec 2025 19:05:07 +0000</lastBuildDate>
+    <managingEditor>info@dpi.network (DPI Network)</managingEditor>
+    <webMaster>info@dpi.network (DPI Network)</webMaster>
+    <lastBuildDate>Tue, 09 Dec 2025 19:43:17 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/en/tags/footer/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Configure Main Footer</title>
       <link>http://localhost:1313/en/post/configure-main-footer/</link>
       <pubDate>Sun, 26 Jan 2025 00:00:00 +0000</pubDate>
-      <author>email@example.com (Author Name)</author>
+      <author>info@dpi.network (DPI Network)</author>
       <dc:creator>Author Name</dc:creator>
       <guid>http://localhost:1313/en/post/configure-main-footer/</guid>
       <description>How to configure the main footer in Hugo Brewm theme</description>

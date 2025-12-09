@@ -1,4 +1,0 @@
----
-title: 'kembang'
-translationKey: budding
----

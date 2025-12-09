@@ -1,4 +1,0 @@
----
-title: 'evergreen'
-translationKey: evergreen
----

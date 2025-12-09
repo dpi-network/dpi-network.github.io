@@ -6,21 +6,15 @@
     <description>Recent Posts on Data for Public Impact Network</description>
     <generator>Hugo 0.151.2</generator>
     <language>en-GB</language>
-    <managingEditor>email@example.com (Author Name)</managingEditor>
-    <webMaster>email@example.com (Author Name)</webMaster>
-    <lastBuildDate>Tue, 09 Dec 2025 19:05:07 +0000</lastBuildDate>
+    <managingEditor>info@dpi.network (DPI Network)</managingEditor>
+    <webMaster>info@dpi.network (DPI Network)</webMaster>
+    <lastBuildDate>Tue, 09 Dec 2025 19:43:17 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/en/index.xml" rel="self" type="application/rss+xml" />
-        <atom:link href="http://localhost:1313/id/index.xml" hreflang="id" rel="alternate" type="application/rss&#43;xml" />
-        
-        <atom:link href="http://localhost:1313/es-mx/index.xml" hreflang="es-mx" rel="alternate" type="application/rss&#43;xml" />
-        
-        <atom:link href="http://localhost:1313/hi/index.xml" hreflang="hi" rel="alternate" type="application/rss&#43;xml" />
-        
     <item>
       <title>Authoring Stage Taxonomy for Digital Garden</title>
       <link>http://localhost:1313/en/post/authoring-custom-taxonomy/</link>
       <pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate>
-      <author>email@example.com (Author Name)</author>
+      <author>info@dpi.network (DPI Network)</author>
       <dc:creator>Author Name</dc:creator>
       <guid>http://localhost:1313/en/post/authoring-custom-taxonomy/</guid>
       <description>&lt;p&gt;This theme supports custom taxonomy and growth stage indicators.&#xA;By default &lt;code&gt;seedling&lt;/code&gt;, &lt;code&gt;budding&lt;/code&gt; and &lt;code&gt;evergreen&lt;/code&gt; will have predefined indicator.&lt;/p&gt;</description>
@@ -31,7 +25,7 @@
       <title>Authoring Cover Images and Audio Articles</title>
       <link>http://localhost:1313/en/post/authoring-cover-images-and-audio-article/</link>
       <pubDate>Sat, 22 Feb 2025 00:00:00 +0000</pubDate>
-      <author>email@example.com (Author Name)</author>
+      <author>info@dpi.network (DPI Network)</author>
       <dc:creator>Author Name</dc:creator>
       <guid>http://localhost:1313/en/post/authoring-cover-images-and-audio-article/</guid>
       <description>A guide on adding cover images and audio articles</description>
@@ -43,7 +37,7 @@
       <title>Authoring Terms Entry</title>
       <link>http://localhost:1313/en/post/authoring-terms-entry/</link>
       <pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate>
-      <author>email@example.com (Author Name)</author>
+      <author>info@dpi.network (DPI Network)</author>
       <dc:creator>Author Name &amp; A.N. Other</dc:creator>
       <guid>http://localhost:1313/en/post/authoring-terms-entry/</guid>
       <description>How to set the cover and linking of terms entry in Hugo Brewm theme</description>
@@ -54,7 +48,7 @@
       <title>Authoring The Redaction History</title>
       <link>http://localhost:1313/en/post/authoring-redaction-history/</link>
       <pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate>
-      <author>email@example.com (Author Name)</author>
+      <author>info@dpi.network (DPI Network)</author>
       <dc:creator>Author Name</dc:creator>
       <guid>http://localhost:1313/en/post/authoring-redaction-history/</guid>
       <description>How to set up the redaction history in Hugo Brewm theme</description>
@@ -65,7 +59,7 @@
       <title>Configure Discussion</title>
       <link>http://localhost:1313/en/post/configure-discussion/</link>
       <pubDate>Sun, 26 Jan 2025 00:00:00 +0000</pubDate>
-      <author>email@example.com (Author Name)</author>
+      <author>info@dpi.network (DPI Network)</author>
       <dc:creator>Author Name</dc:creator>
       <guid>http://localhost:1313/en/post/configure-discussion/</guid>
       <description>How to configure post discussion in Hugo Brewm theme</description>
@@ -76,7 +70,7 @@
       <title>Configure Homepage Slides</title>
       <link>http://localhost:1313/en/post/configure-slides/</link>
       <pubDate>Sun, 26 Jan 2025 00:00:00 +0000</pubDate>
-      <author>email@example.com (Author Name)</author>
+      <author>info@dpi.network (DPI Network)</author>
       <dc:creator>Author Name</dc:creator>
       <guid>http://localhost:1313/en/post/configure-slides/</guid>
       <description>How to configure Homepage Slides section in Hugo Brewm theme</description>
@@ -87,7 +81,7 @@
       <title>Configure Logo and Accent Color</title>
       <link>http://localhost:1313/en/post/configure-logo-and-accent-color/</link>
       <pubDate>Sun, 26 Jan 2025 00:00:00 +0000</pubDate>
-      <author>email@example.com (Author Name)</author>
+      <author>info@dpi.network (DPI Network)</author>
       <dc:creator>Author Name</dc:creator>
       <guid>http://localhost:1313/en/post/configure-logo-and-accent-color/</guid>
       <description>How to configure the Logo and Accent Color in Hugo Brewm theme</description>
@@ -98,7 +92,7 @@
       <title>Configure Main Footer</title>
       <link>http://localhost:1313/en/post/configure-main-footer/</link>
       <pubDate>Sun, 26 Jan 2025 00:00:00 +0000</pubDate>
-      <author>email@example.com (Author Name)</author>
+      <author>info@dpi.network (DPI Network)</author>
       <dc:creator>Author Name</dc:creator>
       <guid>http://localhost:1313/en/post/configure-main-footer/</guid>
       <description>How to configure the main footer in Hugo Brewm theme</description>
@@ -109,7 +103,7 @@
       <title>Configure Menu</title>
       <link>http://localhost:1313/en/post/configure-menu/</link>
       <pubDate>Sun, 26 Jan 2025 00:00:00 +0000</pubDate>
-      <author>email@example.com (Author Name)</author>
+      <author>info@dpi.network (DPI Network)</author>
       <dc:creator>Author Name</dc:creator>
       <guid>http://localhost:1313/en/post/configure-menu/</guid>
       <description>How to configure the menu in Hugo Brewm theme</description>
@@ -120,7 +114,7 @@
       <title>Configure Pagefind</title>
       <link>http://localhost:1313/en/post/configure-pagefind/</link>
       <pubDate>Sun, 26 Jan 2025 00:00:00 +0000</pubDate>
-      <author>email@example.com (Author Name)</author>
+      <author>info@dpi.network (DPI Network)</author>
       <dc:creator>Author Name</dc:creator>
       <guid>http://localhost:1313/en/post/configure-pagefind/</guid>
       <description>How to configure Pagefind in Hugo Brewm theme</description>
@@ -131,7 +125,7 @@
       <title>Markdown Test</title>
       <link>http://localhost:1313/en/post/markdown-test/</link>
       <pubDate>Sun, 26 Jan 2025 00:00:00 +0000</pubDate>
-      <author>email@example.com (Author Name)</author>
+      <author>info@dpi.network (DPI Network)</author>
       <dc:creator>Author Name</dc:creator>
       <guid>http://localhost:1313/en/post/markdown-test/</guid>
       <description>Various sample Markdown, HTML and MathML test</description>
@@ -142,7 +136,7 @@
       <title>Hugo-Tufte Features compatibility</title>
       <link>http://localhost:1313/en/post/tufte-features/</link>
       <pubDate>Sat, 20 Feb 2016 13:56:01 -0800</pubDate>
-      <author>email@example.com (Author Name)</author>
+      <author>info@dpi.network (DPI Network)</author>
       <dc:creator>Author Name</dc:creator>
       <guid>http://localhost:1313/en/post/tufte-features/</guid>
       <description>Fancy Subtitle</description>

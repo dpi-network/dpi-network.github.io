@@ -1,14 +1,5 @@
 [[main]]
-  name       = 'Fork!'
-  identifier = 'fork'
-  weight     = 3
-  url        = 'https://github.com/foxihd/hugo-brewm'
-  pre        = 'github'
-  [[main.params]]
-    target   = '_blank'
-
-[[main]]
-  name       = 'Series'
+  name       = 'Policy Hackathons'
   identifier = 'series'
   pageRef    = '/series'
   weight     = 1

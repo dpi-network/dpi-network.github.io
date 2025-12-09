@@ -6,13 +6,11 @@
     <description>Publicaciones recientes en Data for Public Impact Network</description>
     <generator>Hugo 0.151.2</generator>
     <language>es-MX</language>
-    <managingEditor>email@example.com (Author Name)</managingEditor>
-    <webMaster>email@example.com (Author Name)</webMaster>
-    <lastBuildDate>Tue, 09 Dec 2025 19:05:07 +0000</lastBuildDate>
+    <managingEditor>info@dpi.network (DPI Network)</managingEditor>
+    <webMaster>info@dpi.network (DPI Network)</webMaster>
+    <lastBuildDate>Tue, 09 Dec 2025 19:25:41 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/es-mx/index.xml" rel="self" type="application/rss+xml" />
         <atom:link href="http://localhost:1313/en/index.xml" hreflang="en" rel="alternate" type="application/rss&#43;xml" />
-        
-        <atom:link href="http://localhost:1313/id/index.xml" hreflang="id" rel="alternate" type="application/rss&#43;xml" />
         
         <atom:link href="http://localhost:1313/hi/index.xml" hreflang="hi" rel="alternate" type="application/rss&#43;xml" />
         
