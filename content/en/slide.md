@@ -16,4 +16,4 @@ From 1-3 May 2026, the Cambridge Policy Hackathon will be held, expecting up to 
 
 
 
-*Scroll to the right for more*
+*Scroll to the right for more upcoming events >>*
