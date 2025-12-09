@@ -1,5 +1,5 @@
 ## Base URL for the site
-baseURL = 'https://foxihd.github.io/hugo-brewm/'
+baseURL = 'https://dpi.network/'
 ## Site title
 title = 'Data for Public Impact Network'
 ## Use hugo-brewm theme
