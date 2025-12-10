@@ -1,7 +1,7 @@
 ---
 type: 'slide'
 title: 'Amsterdam Policy Hackathon'
-cover: 'https://raw.githubusercontent.com/foxihd/hugo-et-hd/master/static/svg/flowlines/28.svg'
+cover: '/img/rotating_3d_scatter-dark.gif'
 weight: 1
 params:
     headless: true
@@ -10,7 +10,7 @@ params:
 
 Keep an eye out for our upcoming hackathon!
 
-The Amsterdam Policy Hackathon will be held again next year, expecting up to around 200 participants. Stay tuned for more information!.
+The Amsterdam Policy Hackathon will be held again next year, expecting up to around 200 participants. Stay tuned for more information!
 
 [Click here to find out more](https://amsterdampolicyhackathon.org/)
 
