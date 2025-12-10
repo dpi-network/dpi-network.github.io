@@ -5,7 +5,7 @@ params:
     headless: true
 ---
 
-**More Links**
+**About Us**
 
 - [More Link 1](#)
 - [More Link 2](#)

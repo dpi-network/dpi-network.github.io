@@ -7,17 +7,16 @@ params:
     target: 'https://github.com/foxihd/hugo-brewm'
 ---
 
-**Impressum**
+**Contact**
 
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Contact us at info.dpin \[at\] gmail \[dot\] com.
 
 <br>
 
 <fieldset id=cookie-banner>
-<legend>Cookie Banner</legend>
+<legend>Cookies</legend>
 <div>
-<span>We do not collect cookie</span>
+<span>We do not collect cookie hehe</span>
 <img id="no-cookie" alt="No Cookie for Cookie Monster" />
 </div>
 </fieldset>

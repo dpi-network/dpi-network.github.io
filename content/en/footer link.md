@@ -5,9 +5,6 @@ params:
     headless: true
 ---
 
-**Example Links**
+**Follow Us**
 
-- [Example Link 1](#)
-- [Example Link 2](#)
-- [Example Link 3](#)
-- [Example Link 4](#)
+- [LinkedIn](https://www.linkedin.com/company/dpi-network)
