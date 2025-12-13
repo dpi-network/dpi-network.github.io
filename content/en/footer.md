@@ -9,7 +9,7 @@ params:
 
 **Contact**
 
-Contact us at info.dpin \[at\] gmail \[dot\] com.
+Contact us at info\[at\] dpi \[dot\] network.
 
 <br>
 
