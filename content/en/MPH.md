@@ -1,6 +1,8 @@
 ---
 type: 'slide'
 title: 'Maastricht Policy Hackathon'
+cover: '/img/rotating_3d_scatter.gif'
+weight: 1
 params:
     headless: true
     target: 'https://github.com/foxihd/hugo-brewm'
