@@ -1,7 +1,7 @@
 ---
 type: 'slide'
 title: 'Amsterdam Policy Hackathon'
-cover: '/img/network_viz.gif'
+cover: '/img/network_viz_grey.gif'
 weight: 1
 params:
     headless: true

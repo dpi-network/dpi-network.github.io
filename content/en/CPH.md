@@ -1,7 +1,7 @@
 ---
 type: 'slide'
 title: 'Cambridge Policy Hackathon'
-cover: '/img/cambridge_white.gif'
+cover: '/img/cambridge_grey.gif'
 weight: 1
 params:
     headless: true
