@@ -119,3 +119,41 @@
     cursor: pointer;
   }
 }
+
+.logo  {
+  -webkit-animation: var(--anm);
+  -moz-animation: var(--anm);
+  -o-animation: var(--anm);
+  animation: var(--anm);
+  --anm: dash 10s infinite alternate;
+  stroke: white;
+  stroke-width: 1px
+}
+
+@-webkit-keyframes dash {
+  0% {
+      fill:white;
+      stroke-dasharray: 0 50%;
+      stroke-dashoffset: 20%
+  }
+
+  100% {
+      fill: #0000;
+      stroke-dasharray: 50% 0;
+      stroke-dashoffset: -20%
+  }
+}
+
+@keyframes dash {
+  0% {
+      fill: white;
+      stroke-dasharray: 0 50%;
+      stroke-dashoffset: 20%
+  }
+
+  100% {
+      fill: #0000;
+      stroke-dasharray: 50% 0;
+      stroke-dashoffset: -20%
+  }
+}
