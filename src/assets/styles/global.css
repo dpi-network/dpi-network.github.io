@@ -157,3 +157,20 @@
       stroke-dashoffset: -20%
   }
 }
+
+.maskparent {
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.mask {
+  /* This line:
+   1. blurs the background so we can see it around the 
+         image as "glow"
+   2. increases the background saturation so we get colors 
+         back after the shadow effect dulls them out
+  */
+  -webkit-backdrop-filter: blur(2px) saturate(3);
+  backdrop-filter: blur(2px) saturate(3);
+  /* These lines prevent the border box from clipping the blur effect */
+}
