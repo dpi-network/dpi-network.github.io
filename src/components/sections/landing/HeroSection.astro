@@ -80,14 +80,19 @@ interface Props {
   <div class="flex w-full">
       <div class="top-12 overflow-hidden">
 	{src && alt &&
-	<Image
+	  <div
+      class="maskparent"
+      style={`background-image: url(${src.src})`}
+    >
+      <Image
         src={src}
         alt={alt}
-        class="h-full w-full scale-100 object-cover object-center"
+        class="h-full w-full scale-100 object-cover object-center mask"
         draggable={"false"}
         loading={"eager"}
         format={"gif"}
-	 />
+	    />
+    </div>
 	}
     </div>
   </div>
