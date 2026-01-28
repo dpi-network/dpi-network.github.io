@@ -1,6 +1,8 @@
 // Define data structures for services and success stories
+import testemonialsImage from "@images/starlight/dpin_logo.png";
+
 export const servicesData = [
-  {
+ {
     title: "Explore Advice and Explanations",
     description:
       "Dive deep into helpful guides and explanations for all of ScrewFast's features",
@@ -45,10 +47,34 @@ export const servicesData = [
 export const successStoriesData = [
   {
     image:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+      testemonialsImage,
     alt: "Image Description",
     description:
-      "See how ScrewFast has empowered businesses of all sizes to achieve outstanding results.",
+      "Read testemonials from participants and partners who have benefited from our hackathons.",
     learnMoreUrl: "#",
+  },
+];
+
+export const eventsData = [
+{
+    title: "Amsterdam Policy Hackathon",
+    description:
+      "Our flagship event, bringing together policymakers, technologists, and citizens to co-create innovative solutions for urban challenges.",
+    icon: "guides",
+    url: "https://amsterdampolicyhackathon.org/",
+  },
+{
+    title: "Cambridge Policy Hackathon",
+    description:
+      "Our first international hackathon, focused on leveraging technology to address policy challenges in Cambridge and beyond.",
+    icon: "guides",
+    url: "https://cambridgepolicyhackathon.org/",
+  },
+{
+    title: "Maastricht Policy Hackathon",
+    description:
+      "Addressing policy challenges in the birthplace of the EU, this event focuses on cross-border collaboration and innovative policy solutions.",
+    icon: "guides",
+    url: "#",
   },
 ];
