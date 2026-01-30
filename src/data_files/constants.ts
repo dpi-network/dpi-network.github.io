@@ -12,7 +12,7 @@ export const SITE = {
   tagline: "Data-driven Social Impact",
   description: "The Data for Public Impact Network (DPIN) connects students and young professionals with peers and organisations, empowering them to apply their skills to address societal challenges through interdisciplinary collaboration.",
   description_short: "The Data for Public Impact Network (DPIN) connects students and young professionals with peers and organisations, empowering them to apply their skills to address societal challenges through interdisciplinary collaboration.",
-  url: "https://dpi-network.github.io/",
+  url: "https://dpi.network/",
   author: "Diego van der Mast & Xuelong Fu",
 };
 
