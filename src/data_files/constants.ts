@@ -47,23 +47,23 @@ export const OG = {
 
 export const partnersData = [
     {
-        icon: AMS,
+        icon: AMS.src,
         name: "first",
         href: "#",
     },
     {
-        icon: vu,
+        icon: vu.src,
         name: "Second",
         href: "#",
     },
     {
-        icon: uva,
+        icon: uva.src,
         name: "Third",
         href: "#",
     },
 
     {
-        icon: city,
+        icon: city.src,
         name: "Fourth",
         href: "#",
     },

@@ -42,7 +42,7 @@ interface Props {
       // TOOD: set to img format
       partners.map((partner) => (
         <a href={partner.href} target="_blank" rel="noopener noreferrer">
-              <div set:html={partner.icon} />
+              <img src={partner.icon} alt={partner.name} class="h-12 w-auto" />
         </a>
       ))
     }
