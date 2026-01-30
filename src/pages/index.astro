@@ -18,9 +18,12 @@ import features from "@data/features.json";
 import pricing from "@data/pricing.json";
 import featureImage from "@images/features-image.avif";
 import construction from "@images/construction-image.avif";
-import tools from "@images/automated-tools.avif";
-import dashboard from "@images/dashboard-image.avif";
+import tools from "@images/blur.jpg";
+import dashboard from "@images/taskboard.jpg";
 import { partnersData } from "@/data_files/constants";
+
+import testemonialImage from "@images/tessa-clement.jpg";
+
 
 const avatarSrcs: Array<string> = [
   "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
@@ -55,83 +58,91 @@ const avatarSrcs: Array<string> = [
   />
 
   <FeaturesGeneral
-    title="Meeting Industry Demands"
-    subTitle="At ScrewFast, we tackle the unique challenges encountered in the hardware and construction sectors. From cutting-edge tools to expert services, we're dedicated to helping you overcome obstacles and achieve your goals."
+    title="What We Do"
+    subTitle="At DPIN, we tackle the unique challenges encountered in the public sector and civil society. Better policy design through collaborative experimentation."
     src={featureImage}
-    alt="ScrewFast products in floating boxes"
+    alt="Placeholder image"
     features={features}
   />
 
   <FeaturesNavs
-    title=`Customize <span class="text-yellow-500 dark:text-yellow-400">ScrewFast</span>'s offerings to perfectly suit your hardware and construction needs.`
+    title=`How <span class="text-yellow-500 dark:text-yellow-400">DPIN</span>'s offerings to perfectly suit your policymaking and impact needs.`
     tabs={[
       {
-        heading: "Cutting-Edge Tools",
+        heading: "Community-rooted challenges",
         content:
-          "Empower your projects with ScrewFast's cutting-edge tools. Experience enhanced efficiency in construction management with our sophisticated automated solutions.",
+          "Local partners define real policy questions with measurable impact potential.",
         svg: "tools",
         src: tools,
         alt: "Yellow and black heavy equipment on brown grass field",
         first: true,
       },
       {
-        heading: "Intuitive Dashboards",
+        heading: "Multidisciplinary teams",
         content:
-          "Navigate with ease using ScrewFast's intuitive dashboards. Set up and oversee your projects seamlessly, with user-friendly interfaces designed for quick and effective workflow management.",
+          "DPIN curates interdisciplinary, excellent, and intrinsically motivated participants to collaboratively prototype innovative solutions addressing these challenges.",
         svg: "dashboard",
         src: dashboard,
         alt: "A screenshot or graphic representation of the intuitive dashboard",
         second: true,
       },
       {
-        heading: "Robust Features",
+        heading: "Outcome-focused deliverables",
         content:
-          "Minimize complexity, maximize productivity. ScrewFast's robust features are engineered to streamline your construction process, delivering results that stand out for their excellence.",
+          "Teams produce concrete policy proposals, implementation roadmaps and engagement plans, driving real-world impact.",
         svg: "house",
         src: construction,
         alt: "Gray metal building frame near tower crane during daytime",
       },
+      {
+        heading: "Post-event integration",
+        content:
+          "We support hosts in connecting winners with decision-makers, pilot opportunities and follow-through structures.",
+        svg: "house",
+        src: construction,
+        alt: "Gray metal building frame near tower crane during daytime",
+      }
     ]}
   />
 
   <TestimonialsSection
-    title="Fast-Track Your Projects"
-    subTitle="At ScrewFast, we ensure a swift start with instant account setup. Experience the speed of construction redefined."
+    title="Connect practitioners & communities"
+    subTitle="Leverage diverse perspectives from tech, academia, public sector and civil society to craft better-informed policy ideas."
     ;
     testimonials={[
       {
         content:
-          "ScrewFast dramatically boosted our project efficiency. Setup was instant, and their rapid response times are phenomenal. Truly a game-changer in hardware and construction support!",
-        author: "Samantha Ruiz",
-        role: "Chief Operating Officer | ConstructIt Inc.",
+          "Joining this hackathon was both fun and valuable. For me, the best part was experimenting with ideas, meeting new people, and testing skills in a fast-paced setting. (...) As the founder of a health tech consultancy company, I loved seeing how students approach innovation in healthcare and AI",
+        author: "Tessa Clement",
+        role: "AI Governance Startup Founder | Panacea Inc..",
         avatarSrc:
-          "https://images.unsplash.com/photo-1593104547489-5cfb3839a3b5?q=80&w=1453&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+          testemonialImage,
       },
     ]}
     statistics={[
       {
-        count: "70k+",
+        count: "20+",
         description:
-          "customers equipped — from DIY to major construction firms",
+          "partner organizations — from funders to challenge providers.",
       },
       {
-        count: "35%",
+        count: "170+",
         description:
-          "uptick in project efficiency with ScrewFast tools and services",
+          "interdisciplinary participants, collaborating on impactful projects using various expertises.",
       },
       {
-        count: "15.3%",
+        count: "4",
         description:
-          "reduction in maintenance costs reported by long-term clients",
+          "challenge owners, from startups and municipalities to non-profits.",
       },
       {
-        count: "2x",
-        description: "quicker assembly using innovative fastening solutions",
+        count: "5+",
+        description: "upcoming events around the world.",
       },
     ]}
   />
 
-  <PricingSection pricing={pricing} />
+  <!-- <PricingSection pricing={pricing} /> -->
 
   <FAQ title="Frequently<br />asked questions" faqs={faqs} />
 

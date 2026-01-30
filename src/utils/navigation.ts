@@ -12,16 +12,16 @@ const footerLinks = [
   {
     section: "Ecosystem",
     links: [
-      { name: "Documentation", url: "/welcome-to-docs/" },
-      { name: "Tools & Equipment", url: "/products" },
-      { name: "Construction Services", url: "/services" },
+      { name: "Amsterdam Policy Hackathon", url: "https://amsterdampolicyhackathon.org/",},
+      { name: "Cambridge Policy Hackathon", url: "https://cambridgepolicyhackathon.org/",},
+      { name: "Maastricht Policy Hackathon", url: "#",},
     ],
   },
   {
-    section: "Company",
+    section: "Foundation",
     links: [
       { name: "About us", url: "#" },
-      { name: "Blog", url: "/blog" },
+      // { name: "Blog", url: "/blog" },
       { name: "Careers", url: "#" },
       { name: "Customers", url: "#" },
     ],
