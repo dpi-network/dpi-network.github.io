@@ -4,7 +4,9 @@ export const people = [
     primaryRole: "Co-chair",
     bio: "Really cool guy",
     roles: [
-      { team: "Board", role: "Co-chair" }
+      { team: "Board", role: "Co-chair" },
+      { team: "Amsterdam Policy Hackathon", role: "Co-chair" },
+      { team: "Maastricht Policy Hackathon", role: "Co-chair" }
     ]
   },
   {
@@ -12,7 +14,8 @@ export const people = [
     primaryRole: "Co-chair",
     bio: "Super nice dude",
     roles: [
-      { team: "Board", role: "Co-chair" }
+      { team: "Board", role: "Co-chair" },
+      { team: "Cambridge Policy Hackathon", role: "Co-chair" }
     ]
   },
   {
@@ -20,7 +23,8 @@ export const people = [
     primaryRole: "Co-chair",
     bio: "Super nice dude",
     roles: [
-      { team: "Board", role: "Co-chair" }
+      { team: "Board", role: "Co-chair" },
+      { team: "Cambridge Policy Hackathon", role: "Co-chair" }
     ]
   },
   {
