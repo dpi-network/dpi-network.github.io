@@ -10,81 +10,7 @@ const metaDescription =
 const ogTitle = "Contact Us | ScrewFast";
 
 import Team from "@components/Team.astro"
-
-const divisions = [
-    {
-        name: "Board",
-        description: "Leading",
-        members: [
-        {
-            name: "Diego van der Mast",
-            role: "Co-chair",
-            bio: "Really cool guy",
-            // image: "/images/team/alex.jpg"
-        },
-        {
-            name: "Xuelong Fu",
-            role: "Co-chair",
-            bio: "Super nice dude",
-            // image: "/images/team/jordan.jpg"
-        },
-        {
-            name: "Adam Herold",
-            role: "Co-chair",
-            bio: "Super nice dude",
-            // image: "/images/team/sam.jpg"
-        },
-        {
-            name: "Ecaterina Găitan-Caty",
-            role: "Officer",
-            bio: "Seems cool? Idk her yet"
-            // image: "/images/team/sam.jpg"
-        },
-    ],
-    },  
-    {
-    name: "Amsterdam Policy Hackathon",
-    description: "Flagship Event",
-    members: [
-      {
-        name: "Tuan Do",
-        role: "Lead Engineer",
-      },
-      {
-        name: "Matteo Postiferi",
-        role: "Engineer"
-      },
-      {
-        name: "Theo Lake",
-        role: "Engineer"
-      }
-    ]
-  },
-  {
-    name: "Cambridge Policy Hackathon",
-    description: "UK Event",
-    members: [
-      {
-        name: "Mo",
-        role: "Lead Engineer",
-      }
-    ]
-  },
-  {
-    name: "Maastricht Policy Hackathon",
-    description: "Cool Event",
-    members: [
-      {
-        name: "Nikita Kirilov",
-        role: "Lead Engineer",
-      },
-      {
-        name: "Almos Bakonyi",
-        role: "Engineer"
-      },
-    ]
-  },
-]
+import { people } from "@data/people.ts"
 
 const title: string = "Our Team";
 const subTitle: string =
@@ -100,7 +26,7 @@ const subTitle: string =
     "@type": "WebPage",
     "@id": "https://screwfast.uk/contact",
     url: "https://screwfast.uk/contact",
-    name: "Contact Us | ScrewFast",
+    name: "Team | ScrewFast",
     description:
       "Have questions or want to discuss a project? Reach out, and let's craft the perfect solution with our tools and services.",
     isPartOf: {
@@ -125,24 +51,6 @@ const subTitle: string =
         {subTitle}
       </p>
     </div>
-<section class="py-6 text-center">  
-    <div class="space-y-16">
-      {divisions.map((division) => (
-        <section>
-          <div class="mb-6">
-            <h3 class="text-2xl font-semibold tracking-tight text-neutral-800 dark:text-neutral-200">
-              {division.name}
-            </h3>
-  
-            {division.description && (
-              <p class="tracking-tight text-neutral-800 dark:text-neutral-200">
-                {division.description}
-              </p>
-            )}
-          </div>
-          <Team members={division.members} />
-        </section>
-      ))}
-    </div>
+    <Team members={people} />
   </section>
 </MainLayout>
