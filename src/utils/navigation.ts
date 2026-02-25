@@ -1,11 +1,13 @@
 // An array of links for navigation bar
 const navBarLinks = [
   { name: "Home", url: "/" },
+  { name: "About Us", url: "/" },
+  { name: "Partners", url: "/" },
   { name: "Hackathons", url: "/" },
   // { name: "Products", url: "/products" },
   // { name: "Services", url: "/services" },
-  // { name: "Blog", url: "/blog" },
-  // { name: "Contact", url: "/contact" },
+  { name: "Blog", url: "/blog" },
+  { name: "Contact", url: "/contact" },
 ];
 // An array of links for footer
 const footerLinks = [
@@ -13,8 +15,9 @@ const footerLinks = [
     section: "Ecosystem",
     links: [
       { name: "Amsterdam Policy Hackathon", url: "https://amsterdampolicyhackathon.org/",},
-      { name: "Cambridge Policy Hackathon", url: "https://cambridgepolicyhackathon.org/",},
-      { name: "Maastricht Policy Hackathon", url: "#",},
+      { name: "Cambridge Policy Hackathon", url: "https://cambridge.dpi.network/",},
+      { name: "The Hague Policy Hackathon", url: "https://thehague.dpi.network/",},
+      { name: "Maastricht Policy Hackathon", url: "https://maastricht.dpi.network/",},
     ],
   },
   {
@@ -22,8 +25,8 @@ const footerLinks = [
     links: [
       { name: "About us", url: "#" },
       // { name: "Blog", url: "/blog" },
-      { name: "Careers", url: "#" },
-      { name: "Customers", url: "#" },
+      { name: "Join us", url: "#" },
+      { name: "Partners", url: "#" },
     ],
   },
 ];
