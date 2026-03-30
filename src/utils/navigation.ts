@@ -7,7 +7,7 @@ const navBarLinks = [
   // { name: "Products", url: "/products" },
   // { name: "Services", url: "/services" },
   // { name: "Blog", url: "/blog" },
-  { name: "Contact", url: "/mailto:info@dpi.network" },
+  { name: "Contact", url: "/contact" },
 ];
 // An array of links for footer
 const footerLinks = [
@@ -32,7 +32,8 @@ const footerLinks = [
 ];
 // An object of links for social icons
 const socialLinks = {
-  linkedin: "https://www.linkedin.com/company/dpi-network"
+  linkedin: "https://www.linkedin.com/company/dpi-network",
+  instagram: "https://www.instagram.com/dpinetwork/",
   // facebook: "https://www.facebook.com/",
   // x: "https://twitter.com/",
   // github: "https://github.com/mearashadowfax/ScrewFast",

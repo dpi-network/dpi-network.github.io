@@ -50,7 +50,7 @@ export const GET: APIRoute = async () => {
     display: "minimal-ui",
     id: "/",
     start_url: "/",
-    theme_color: "#FFEDD5",
+    theme_color: "#ff0101",
     background_color: "#262626",
   };
 

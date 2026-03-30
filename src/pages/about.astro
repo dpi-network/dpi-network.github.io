@@ -1,16 +1,13 @@
 ---
-// Import the necessary components
 import MainLayout from "@/layouts/MainLayout.astro";
-import ContactSection from "@components/sections/misc/ContactSection.astro";
+import Team from "@components/Team.astro";
 import { SITE } from "@data/constants";
+import { people } from "@data/people";
 
-const pageTitle: string = `Contact | ${SITE.title}`;
+const pageTitle: string = `About Us | ${SITE.title}`;
 const metaDescription =
-  "Have questions or want to discuss a project? Reach out, and let's craft the perfect solution with our tools and services.";
-const ogTitle = "Contact Us | ScrewFast";
-
-import Team from "@components/Team.astro"
-import { people } from "@data/people.ts"
+  "Meet the Data for Public Impact Network team: executive board, policy hackathon leads across cities, advisory board, and honorary members.";
+const ogTitle = `About Us | ${SITE.title}`;
 
 const title: string = "Our Team";
 const subTitle: string =
@@ -24,23 +21,20 @@ const subTitle: string =
   structuredData={{
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://screwfast.uk/contact",
-    url: "https://screwfast.uk/contact",
-    name: "Team | ScrewFast",
-    description:
-      "Have questions or want to discuss a project? Reach out, and let's craft the perfect solution with our tools and services.",
+    "@id": `${SITE.url}about`,
+    url: `${SITE.url}about`,
+    name: pageTitle,
+    description: metaDescription,
     isPartOf: {
       "@type": "WebSite",
-      url: "https://screwfast.uk",
-      name: "ScrewFast",
-      description:
-        "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs.",
+      url: SITE.url,
+      name: SITE.title,
+      description: SITE.description,
     },
     inLanguage: "en-US",
   }}
 >
-
-<div class="mx-auto max-w-2xl lg:max-w-5xl mt-12">
+  <div class="mx-auto mt-12 max-w-2xl px-4 lg:max-w-5xl lg:px-6">
     <div class="text-center">
       <h1
         class="text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
@@ -52,5 +46,5 @@ const subTitle: string =
       </p>
     </div>
     <Team members={people} />
-  </section>
+  </div>
 </MainLayout>

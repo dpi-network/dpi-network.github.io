@@ -68,14 +68,7 @@ export const eventsData = [
     description:
       "Our first international hackathon, focused on leveraging technology to address policy challenges in Cambridge and beyond.",
     icon: "guides",
-    url: "https://cambridge.dpi.nentwork/",
-  },
-{
-    title: "The Hague Policy Hackathon",
-    description:
-      "Tackling Dutch and global policy challenges in the major political centre for Dutch politics and international organisations.",
-    icon: "guides",
-    url: "https://thehague.dpi.network/",
+    url: "https://cambridge.dpi.network/",
   },
 {
     title: "Maastricht Policy Hackathon",
@@ -83,5 +76,12 @@ export const eventsData = [
       "Addressing policy challenges in the birthplace of the EU, this event focuses on cross-border collaboration and innovative policy solutions.",
     icon: "guides",
     url: "https://maastricht.dpi.network/",
+  },
+{
+    title: "The Hague Policy Hackathon",
+    description:
+      "Tackling Dutch and global policy challenges in the major political centre for Dutch politics and international organisations.",
+    icon: "guides",
+    url: "https://thehague.dpi.network/",
   },
 ];

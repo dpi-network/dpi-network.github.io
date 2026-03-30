@@ -1,89 +1,299 @@
 ---
-export interface Role {
-  team: string
-  role: string
-}
-
-export interface Person {
-  name: string
-  primaryRole: string
-  image?: string
-  roles?: Role[]
-}
+import type { Person, TeamSectionId } from "@data/people"
+import {
+  TEAM_SECTION_ORDER,
+  sortPeopleByLastName,
+} from "@data/people"
+import { resolveTeamPhoto } from "@utils/teamPhotos"
 
 const { members } = Astro.props as { members: Person[] }
+
+const photoUrlByName = Object.fromEntries(
+  members.map((p) => [p.name, resolveTeamPhoto(p.photo) ?? ""]),
+) as Record<string, string>
+
+/** DPIN logo sampled red (see `src/images/starlight/dpin_logo.png`) */
+const dpiRed = "#ff0101"
+
+function peopleInSection(section: TeamSectionId): Person[] {
+  const inSection = members.filter((p) =>
+    p.roles?.some((r) => r.team === section),
+  )
+  return sortPeopleByLastName(inSection)
+}
+
+function roleInSection(person: Person, section: TeamSectionId): string {
+  return (
+    person.roles?.find((r) => r.team === section)?.role ?? person.primaryRole
+  )
+}
 ---
 
-<section class="py-12">
-  <ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-    {members.map((person) => {
-      const hasImage = person.image && person.image.trim() !== ""
-
-      return (
-        <li
-          class="
-            rounded-2xl bg-neutral-200 dark:bg-neutral-900 p-6 
-            text-center shadow-sm ring-5 ring-black/5 transition hover:shadow-md"
-        >
-          {/* Avatar */}
-          {hasImage ? (
-            <img
-              src={person.image}
-              alt={`Photo of ${person.name}`}
-              loading="lazy"
-              class="mx-auto mb-4 h-24 w-24 rounded-full object-cover"
-            />
-          ) : (
-            <div
-              class="
-                mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full
-                bg-gray-100 text-gray-400
-                [data-theme='dark']&:bg-gray-800 [data-theme='dark']&:text-gray-500
-              "
-            >
-              {/* FA user icon */}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 448 512"
-                class="h-12 w-12"
-                aria-hidden="true"
+<section class="py-10 sm:py-14">
+  <div class="space-y-16 sm:space-y-20">
+    {
+      TEAM_SECTION_ORDER.map((sectionId) => {
+        const sectionPeople = peopleInSection(sectionId)
+        return (
+          <section
+            class="scroll-mt-24"
+            aria-labelledby={`team-heading-${sectionId.replace(/\s+/g, "-").toLowerCase()}`}
+          >
+            <div class="mb-8 flex flex-col gap-2 border-b border-neutral-300/80 pb-4 dark:border-neutral-600/80 sm:mb-10 sm:flex-row sm:items-end sm:justify-between">
+              <h2
+                id={`team-heading-${sectionId.replace(/\s+/g, "-").toLowerCase()}`}
+                class="flex items-center gap-3 text-xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-2xl"
               >
-                <path
-                  fill="currentColor"
-                  d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304h-91.4z"
+                <span
+                  class="h-8 w-1.5 shrink-0 rounded-full"
+                  style={`background-color: ${dpiRed}`}
+                  aria-hidden="true"
                 />
-              </svg>
+                <span>{sectionId}</span>
+              </h2>
+              <p class="text-sm text-neutral-500 dark:text-neutral-400">
+                {sectionPeople.length}{" "}
+                {sectionPeople.length === 1 ? "member" : "members"}
+              </p>
             </div>
-          )}
 
-          {/* Name */}
-          <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-200">
-            {person.name}
-          </h3>
+            {sectionPeople.length === 0 ? (
+              <p class="rounded-xl border border-dashed border-neutral-300 bg-neutral-100/80 px-5 py-10 text-center text-sm text-neutral-500 dark:border-neutral-600 dark:bg-neutral-900/50 dark:text-neutral-400">
+                Members for this group will be listed here soon.
+              </p>
+            ) : (
+              <ul class="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-4">
+                {sectionPeople.map((person) => {
+                  const photoSrc = photoUrlByName[person.name] ?? ""
+                  const hasPhoto = photoSrc.length > 0
+                  const roleHere = roleInSection(person, sectionId)
 
-          {/* Primary role */}
-          <p class="text-sm text-neutral-800 dark:text-neutral-200">
-            {person.primaryRole}
-          </p>
+                  return (
+                    <li class="group h-full list-none">
+                      <button
+                        type="button"
+                        class="team-member-trigger relative flex h-full w-full cursor-pointer flex-col overflow-hidden rounded-xl border border-neutral-200/90 bg-white p-4 text-left shadow-sm transition duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-200 dark:border-neutral-700/90 dark:bg-neutral-900/40 dark:focus-visible:ring-offset-neutral-900"
+                        data-team-member
+                        data-person-name={person.name}
+                        data-role={roleHere}
+                        data-section={sectionId}
+                        aria-haspopup="dialog"
+                        aria-label={`Open profile: ${person.name}`}
+                      >
+                        <div
+                          class="pointer-events-none absolute inset-x-0 top-0 h-0.5"
+                          style={`background-color: ${dpiRed}`}
+                          aria-hidden="true"
+                        />
+                        <div class="flex flex-1 flex-col items-center pt-0.5 text-center">
+                          {hasPhoto ? (
+                            <img
+                              src={photoSrc}
+                              alt=""
+                              loading="lazy"
+                              class="pointer-events-none mb-3 h-28 w-28 rounded-xl object-cover shadow-md ring-2 ring-neutral-200/80 transition group-hover:ring-red-200/60 dark:ring-neutral-700 dark:group-hover:ring-red-900/40"
+                            />
+                          ) : (
+                            <div
+                              class="pointer-events-none mb-3 flex h-28 w-28 items-center justify-center rounded-xl bg-gradient-to-br from-neutral-100 to-neutral-200 text-neutral-400 shadow-inner ring-2 ring-neutral-200/80 dark:from-neutral-800 dark:to-neutral-900 dark:text-neutral-500 dark:ring-neutral-700"
+                              aria-hidden="true"
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 448 512"
+                                class="h-14 w-14 opacity-80"
+                                fill="currentColor"
+                              >
+                                <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304h-91.4z" />
+                              </svg>
+                            </div>
+                          )}
 
-          {/* Secondary roles */}
-          {person.roles && person.roles.length > 0 && (
-            <ul class="mt-4 flex flex-wrap justify-center gap-2">
-              {person.roles.map((r) => (
-                <li
-                  class="
-                    rounded-full px-3 py-1 text-xs
-                    text-neutral-200
-                    bg-gray-800 dark:text-neutral-200
-                  "
-                >
-                  {r.team} · {r.role}
-                </li>
-              ))}
-            </ul>
-          )}
-        </li>
-      )
-    })}
-  </ul>
+                          <h3 class="text-sm font-semibold leading-snug tracking-tight text-neutral-900 dark:text-neutral-100">
+                            {person.name}
+                          </h3>
+                          <p
+                            class="mt-1 text-xs font-medium leading-snug"
+                            style={`color: ${dpiRed}`}
+                          >
+                            {roleHere}
+                          </p>
+                          <span class="mt-2 text-[10px] font-medium uppercase tracking-wide text-neutral-400 opacity-0 transition group-hover:opacity-100 dark:text-neutral-500">
+                            Read bio
+                          </span>
+                        </div>
+                      </button>
+                    </li>
+                  )
+                })}
+              </ul>
+            )}
+          </section>
+        )
+      })
+    }
+  </div>
+
+  <dialog
+    id="team-profile-dialog"
+    class="team-profile-dialog fixed inset-0 z-[100] m-0 h-full max-h-none w-full max-w-none border-0 bg-transparent p-0 [&::backdrop]:bg-neutral-950/60 [&::backdrop]:backdrop-blur-[2px]"
+    aria-labelledby="team-profile-dialog-title"
+  >
+    <div
+      class="flex min-h-full w-full items-center justify-center p-4 sm:p-6"
+      data-dialog-dismiss
+    >
+      <div
+        class="relative w-full max-w-md overflow-hidden rounded-2xl border border-neutral-200/90 bg-white shadow-2xl dark:border-neutral-700 dark:bg-neutral-900"
+        data-dialog-panel
+      >
+        <div
+          class="h-1 w-full shrink-0"
+          style={`background-color: ${dpiRed}`}
+          aria-hidden="true"
+        />
+        <button
+          type="button"
+          class="absolute right-3 top-5 z-10 flex h-9 w-9 items-center justify-center rounded-lg text-neutral-500 transition hover:bg-neutral-100 hover:text-neutral-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500/70 dark:hover:bg-neutral-800 dark:hover:text-neutral-200"
+          data-dialog-close
+          aria-label="Close profile"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <div class="max-h-[min(85vh,640px)] overflow-y-auto px-6 pb-6 pt-8 sm:px-8">
+          <div class="flex flex-col items-center text-center sm:flex-row sm:items-start sm:gap-6 sm:text-left">
+            <div
+              class="team-profile-dialog-photo mb-5 shrink-0 sm:mb-0"
+              data-profile-photo-wrap
+            />
+            <div class="min-w-0 flex-1">
+              <p
+                class="mb-1 text-[10px] font-semibold uppercase tracking-widest text-neutral-400 dark:text-neutral-500"
+                data-profile-section
+              />
+              <h2
+                id="team-profile-dialog-title"
+                class="text-xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-2xl"
+                data-profile-name
+              />
+              <p
+                class="mt-1 text-sm font-semibold"
+                style={`color: ${dpiRed}`}
+                data-profile-role
+              />
+            </div>
+          </div>
+
+          <div
+            class="mt-6 border-t border-neutral-200 pt-6 text-sm leading-relaxed text-neutral-600 dark:border-neutral-700 dark:text-neutral-300"
+          >
+            <p class="text-xs font-semibold uppercase tracking-wide text-neutral-400 dark:text-neutral-500">
+              About
+            </p>
+            <p class="mt-2 text-pretty" data-profile-bio />
+          </div>
+        </div>
+      </div>
+    </div>
+  </dialog>
 </section>
+
+<script define:vars={{ members, photoUrlByName }}>
+  const dialog = document.getElementById("team-profile-dialog")
+  const dismiss = dialog?.querySelector("[data-dialog-dismiss]")
+  const panel = dialog?.querySelector("[data-dialog-panel]")
+  const closeBtn = dialog?.querySelector("[data-dialog-close]")
+  const photoWrap = dialog?.querySelector("[data-profile-photo-wrap]")
+  const nameEl = dialog?.querySelector("[data-profile-name]")
+  const roleEl = dialog?.querySelector("[data-profile-role]")
+  const sectionEl = dialog?.querySelector("[data-profile-section]")
+  const bioEl = dialog?.querySelector("[data-profile-bio]")
+
+  if (
+    dialog &&
+    dismiss &&
+    panel &&
+    photoWrap &&
+    nameEl &&
+    roleEl &&
+    sectionEl &&
+    bioEl
+  ) {
+    let lastTrigger = null
+
+    function findPerson(name) {
+      return members.find((p) => p.name === name)
+    }
+
+    function setPhoto(person) {
+      photoWrap.innerHTML = ""
+      const url = photoUrlByName[person.name] ?? ""
+      const hasImg = url.length > 0
+      if (hasImg) {
+        const img = document.createElement("img")
+        img.src = url
+        img.alt = `Photo of ${person.name}`
+        img.className =
+          "h-24 w-24 rounded-2xl object-cover shadow-md ring-2 ring-neutral-200/80 dark:ring-neutral-700 sm:h-28 sm:w-28"
+        img.loading = "lazy"
+        photoWrap.appendChild(img)
+      } else {
+        const ph = document.createElement("div")
+        ph.className =
+          "flex h-24 w-24 items-center justify-center rounded-2xl bg-gradient-to-br from-neutral-100 to-neutral-200 text-neutral-400 shadow-inner ring-2 ring-neutral-200/80 dark:from-neutral-800 dark:to-neutral-900 dark:text-neutral-500 dark:ring-neutral-700 sm:h-28 sm:w-28"
+        ph.setAttribute("aria-hidden", "true")
+        ph.innerHTML =
+          '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="h-12 w-12 opacity-80" fill="currentColor"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304h-91.4z"/></svg>'
+        photoWrap.appendChild(ph)
+      }
+    }
+
+    function openFromTrigger(trigger) {
+      const name = trigger.getAttribute("data-person-name")
+      const role = trigger.getAttribute("data-role") ?? ""
+      const section = trigger.getAttribute("data-section") ?? ""
+      if (!name) return
+      const person = findPerson(name)
+      if (!person) return
+
+      lastTrigger = trigger
+      nameEl.textContent = person.name
+      roleEl.textContent = role
+      sectionEl.textContent = section
+      const bio = person.bio?.trim()
+      bioEl.textContent =
+        bio ||
+        "We’re adding more detail here soon, thank you for your interest."
+      setPhoto(person)
+      document.body.style.overflow = "hidden"
+      dialog.showModal()
+      closeBtn?.focus()
+    }
+
+    document.querySelectorAll("[data-team-member]").forEach((btn) => {
+      btn.addEventListener("click", () => openFromTrigger(btn))
+    })
+
+    panel.addEventListener("click", (e) => e.stopPropagation())
+    dismiss.addEventListener("click", () => dialog.close())
+    closeBtn?.addEventListener("click", () => dialog.close())
+
+    dialog.addEventListener("close", () => {
+      document.body.style.overflow = ""
+      if (lastTrigger && typeof lastTrigger.focus === "function") {
+        lastTrigger.focus()
+      }
+    })
+  }
+</script>

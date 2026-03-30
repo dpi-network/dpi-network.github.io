@@ -16,6 +16,12 @@ export const SITE = {
   author: "Diego van der Mast & Xuelong Fu",
 };
 
+export const CONTACT = {
+  email: "info [at] dpi.network",
+  linkedin: "https://www.linkedin.com/company/dpi-network",
+  instagram: "https://www.instagram.com/dpi.network/",
+} as const
+
 export const SEO = {
   title: SITE.title,
   description: SITE.description,
