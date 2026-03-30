@@ -61,7 +61,7 @@ export const eventsData = [
     description:
       "Our flagship event, bringing together policymakers, technologists, and citizens to co-create innovative solutions for urban challenges.",
     icon: "guides",
-    url: "https://amsterdampolicyhackathon.org/",
+    url: "https://amsterdam.dpi.network/",
   },
 {
     title: "Cambridge Policy Hackathon",

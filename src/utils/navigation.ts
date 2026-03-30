@@ -14,7 +14,7 @@ const footerLinks = [
   {
     section: "Ecosystem",
     links: [
-      { name: "Amsterdam Policy Hackathon", url: "https://amsterdampolicyhackathon.org/",},
+      { name: "Amsterdam Policy Hackathon", url: "https://amsterdam.dpi.network/",},
       { name: "Cambridge Policy Hackathon", url: "https://cambridge.dpi.network/",},
       { name: "The Hague Policy Hackathon", url: "https://thehague.dpi.network/",},
       { name: "Maastricht Policy Hackathon", url: "https://maastricht.dpi.network/",},
