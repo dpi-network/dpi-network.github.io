@@ -6,8 +6,8 @@ const navBarLinks = [
   { name: "Hackathons", url: "/" },
   // { name: "Products", url: "/products" },
   // { name: "Services", url: "/services" },
-  { name: "Blog", url: "/blog" },
-  { name: "Contact", url: "/contact" },
+  // { name: "Blog", url: "/blog" },
+  { name: "Contact", url: "/mailto:info@dpi.network" },
 ];
 // An array of links for footer
 const footerLinks = [
@@ -23,10 +23,10 @@ const footerLinks = [
   {
     section: "Foundation",
     links: [
-      { name: "About us", url: "#" },
+      { name: "About us", url: "/" },
       // { name: "Blog", url: "/blog" },
-      { name: "Join us", url: "#" },
-      { name: "Partners", url: "#" },
+      { name: "Join us", url: "/" },
+      { name: "Partners", url: "/" },
     ],
   },
 ];
