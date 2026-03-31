@@ -1,0 +1,40 @@
+---
+import PartnerLogo from "@components/PartnerLogo.astro"
+
+interface Props {
+  name: string
+  logoSrc: string
+  hasLogo: boolean
+  url?: string
+}
+
+const { name, logoSrc, hasLogo, url } = Astro.props as Props
+const href = url?.trim()
+const hasUrl = Boolean(href)
+
+const shellClass =
+  "mx-auto grid aspect-square w-full max-w-[7.5rem] min-h-0 place-items-center overflow-hidden rounded-lg border border-neutral-200/90 bg-neutral-50/90 p-2.5 shadow-sm transition sm:max-w-[8.25rem] sm:p-3 dark:border-white/[0.08] dark:bg-neutral-200/90 dark:shadow-sm dark:shadow-black/35"
+
+const interactiveClass =
+  "hover:border-red-200/70 hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500/50 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-100 dark:hover:border-red-400/25 dark:focus-visible:ring-offset-neutral-100"
+---
+
+<li class="list-none">
+  {
+    hasUrl ? (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        class:list={[shellClass, interactiveClass]}
+        aria-label={`${name} (opens in new tab)`}
+      >
+        <PartnerLogo name={name} logoSrc={logoSrc} hasLogo={hasLogo} />
+      </a>
+    ) : (
+      <div class={shellClass}>
+        <PartnerLogo name={name} logoSrc={logoSrc} hasLogo={hasLogo} />
+      </div>
+    )
+  }
+</li>

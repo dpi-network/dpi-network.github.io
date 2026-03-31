@@ -1,0 +1,50 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro"
+import PartnersSection from "@components/Partners.astro"
+import { SITE } from "@data/constants"
+import { partners } from "@data/partners"
+
+const pageTitle: string = `Partners | ${SITE.title}`
+const metaDescription =
+  "Organizations that sponsor the Data for Public Impact Network, our community partners, and organizations that have supported our policy hackathons."
+const ogTitle = `Partners | ${SITE.title}`
+
+const title: string = "Our Partners"
+const subTitle: string =
+  "Organizations that make the Network possible. Even more to come..."
+---
+
+<MainLayout
+  title={pageTitle}
+  customDescription={metaDescription}
+  customOgTitle={ogTitle}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${SITE.url}partners`,
+    url: `${SITE.url}partners`,
+    name: pageTitle,
+    description: metaDescription,
+    isPartOf: {
+      "@type": "WebSite",
+      url: SITE.url,
+      name: SITE.title,
+      description: SITE.description,
+    },
+    inLanguage: "en-US",
+  }}
+>
+  <div class="mx-auto mt-12 max-w-2xl px-4 lg:max-w-5xl lg:px-6">
+    <div class="text-center">
+      <h1
+        class="text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
+      >
+        {title}
+      </h1>
+      <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-400">
+        {subTitle}
+      </p>
+    </div>
+    <PartnersSection list={partners} />
+  </div>
+</MainLayout>
