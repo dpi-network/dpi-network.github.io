@@ -48,18 +48,18 @@ export function sortPeopleByLastName<T extends { name: string }>(list: T[]): T[]
 }
 
 export const people: Person[] = [
+  // Executive Board
   {
-    name: "Almos Bakonyi",
-    primaryRole: "Co-Organizer",
+    name: "Diego van der Mast",
+    primaryRole: "Co-Founder and Co-Director",
     bio: "",
-    roles: [{ team: "Maastricht Policy Hackathon", role: "Co-Organizer" }],
-  },
-  {
-    name: "Tuan Do",
-    primaryRole: "Co-Organizer",
-    bio: "",
-    photo: "tuan.jpg",
-    roles: [{ team: "Amsterdam Policy Hackathon", role: "Co-Organizer" }],
+    photo: "diego.jpg",
+    roles: [
+      { team: "Executive Board", role: "Co-Founder and Co-Director" },
+      { team: "Amsterdam Policy Hackathon", role: "Co-Organizer" },
+      { team: "Maastricht Policy Hackathon", role: "Co-Organizer" },
+      { team: "The Hague Policy Hackathon", role: "Co-Organizer" },
+    ],
   },
   {
     name: "Xuelong Fu",
@@ -92,11 +92,14 @@ export const people: Person[] = [
       { team: "Cambridge Policy Hackathon", role: "Co-Organizer" },
     ],
   },
+
+  // Amsterdam Policy Hackathon
   {
-    name: "Nikita Kirilov",
+    name: "Tuan Do",
     primaryRole: "Co-Organizer",
     bio: "",
-    roles: [{ team: "Maastricht Policy Hackathon", role: "Co-Organizer" }],
+    photo: "tuan.jpg",
+    roles: [{ team: "Amsterdam Policy Hackathon", role: "Co-Organizer" }],
   },
   {
     name: "Theo Lake",
@@ -104,25 +107,6 @@ export const people: Person[] = [
     bio: "",
     photo: "theo.jpg",
     roles: [{ team: "Amsterdam Policy Hackathon", role: "Co-Organizer" }],
-  },
-  {
-    name: "Diego van der Mast",
-    primaryRole: "Co-Founder and Co-Director",
-    bio: "",
-    photo: "diego.jpg",
-    roles: [
-      { team: "Executive Board", role: "Co-Founder and Co-Director" },
-      { team: "Amsterdam Policy Hackathon", role: "Co-Organizer" },
-      { team: "Maastricht Policy Hackathon", role: "Co-Organizer" },
-      { team: "The Hague Policy Hackathon", role: "Co-Organizer" },
-    ],
-  },
-  {
-    name: "Arif Baker",
-    primaryRole: "Co-Organizer",
-    bio: "",
-    photo: "arif.png",
-    roles: [{ team: "Cambridge Policy Hackathon", role: "Co-Organizer" }],
   },
   {
     name: "Matteo Postiferi",
@@ -133,13 +117,33 @@ export const people: Person[] = [
   },
 
 
+ // Cambridge Policy Hackathon
+  {
+    name: "Arif Baker",
+    primaryRole: "Co-Organizer",
+    bio: "",
+    photo: "arif.png",
+    roles: [{ team: "Cambridge Policy Hackathon", role: "Co-Organizer" }],
+  },
 
 
 
 
-
-
-
+  // Maastricht Policy Hackathon
+  {
+    name: "Almos Bakonyi",
+    primaryRole: "Co-Organizer",
+    bio: "",
+    photo: "almos.jpg",
+    roles: [{ team: "Maastricht Policy Hackathon", role: "Co-Organizer" }],
+  },
+  {
+    name: "Nikita Kirilov",
+    primaryRole: "Co-Organizer",
+    bio: "",
+    photo: "nikita.jpg",
+    roles: [{ team: "Maastricht Policy Hackathon", role: "Co-Organizer" }],
+  },
 
 
 
