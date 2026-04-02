@@ -50,7 +50,7 @@ export const successStoriesData = [
       testemonialsImage,
     alt: "Image Description",
     description:
-      "Read testemonials from participants and partners who have benefited from our hackathons.",
+      "Read testemonials from participants and partners who have engaged with our hackathons.",
     learnMoreUrl: "#",
   },
 ];
