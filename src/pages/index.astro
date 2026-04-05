@@ -3,7 +3,7 @@
 import MainLayout from "@/layouts/MainLayout.astro";
 import HeroSection from "@components/sections/landing/HeroSection.astro";
 import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
-import ClientsSection from "@components/sections/landing/ClientsSection.astro";
+import PartnerLogosMarquee from "@components/sections/landing/PartnerLogosMarquee.astro";
 import FeaturesGeneral from "@components/sections/features/FeaturesGeneral.astro";
 import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
 import TestimonialsSection from "@components/sections/testimonials/TestimonialsSection.astro";
@@ -20,7 +20,7 @@ import featureImage from "@images/features-image.avif";
 import construction from "@images/construction-image.avif";
 import tools from "@images/blur.jpg";
 import dashboard from "@images/taskboard.jpg";
-import { partnersData } from "@/data_files/constants";
+import { partners } from "@data/partners";
 
 import testemonialImage from "@images/tessa-clement.jpg";
 
@@ -51,11 +51,7 @@ const avatarSrcs: Array<string> = [
     alt="DPIN Logo"
   />
 
-  <ClientsSection
-    title="Organizations that have shown support"
-    subTitle=""
-    partners={partnersData}
-  />
+  <PartnerLogosMarquee list={partners} />
 
   <FeaturesGeneral
     title="What We Do"

@@ -1,0 +1,160 @@
+---
+import type { Partner } from "@data/partners"
+import { partnersInSection } from "@data/partners"
+import { resolvePartnerLogo } from "@utils/partnerLogos"
+
+const SECTION = "Organizations that supported our events" as const
+
+const { list } = Astro.props as { list: Partner[] }
+
+const withLogos = partnersInSection(SECTION, list)
+  .map((p) => ({
+    ...p,
+    logoSrc: resolvePartnerLogo(p.logo) ?? "",
+  }))
+  .filter((p) => p.logoSrc.length > 0)
+---
+
+<section
+  id="start"
+  class="w-full pb-10 pt-2 sm:pb-12 sm:pt-4"
+  aria-labelledby="partner-marquee-label"
+>
+  <div
+    class="mx-auto mb-2 max-w-[85rem] px-4 sm:px-6 lg:px-8 2xl:max-w-full"
+  >
+    <p
+      id="partner-marquee-label"
+      class="text-left text-xs font-medium tracking-wide text-neutral-500/70 dark:text-neutral-400/60 sm:text-sm"
+    >
+      Partners that have supported our events
+    </p>
+  </div>
+
+  {
+    withLogos.length === 0 ? (
+      <div class="mx-auto max-w-[85rem] px-4 sm:px-6 lg:px-8 2xl:max-w-full">
+        <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          Partner logos will appear here soon.
+        </p>
+      </div>
+    ) : (
+      <div class="partner-marquee-bleed overflow-hidden">
+        <div class="partner-marquee-track flex w-max items-center">
+          <div class="partner-marquee-group flex items-center gap-x-12 pr-12 sm:gap-x-16 sm:pr-16 md:gap-x-20 md:pr-20">
+            {
+              withLogos.map((partner) => {
+                const img = (
+                  <img
+                    src={partner.logoSrc}
+                    alt=""
+                    class="partner-marquee-logo h-9 w-auto max-h-9 max-w-[min(9rem,28vw)] shrink-0 object-contain opacity-90 sm:h-11 sm:max-h-11 sm:max-w-[10rem]"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                )
+                return (
+                  <span class="flex shrink-0 items-center justify-center">
+                    {partner.url ? (
+                      <a
+                        href={partner.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="transition-opacity hover:opacity-100"
+                        aria-label={partner.name}
+                      >
+                        {img}
+                      </a>
+                    ) : (
+                      <span title={partner.name}>{img}</span>
+                    )}
+                  </span>
+                )
+              })
+            }
+          </div>
+          <div class="partner-marquee-group partner-marquee-group--clone flex items-center gap-x-12 pr-12 sm:gap-x-16 sm:pr-16 md:gap-x-20 md:pr-20">
+            {
+              withLogos.map((partner) => {
+                const img = (
+                  <img
+                    src={partner.logoSrc}
+                    alt=""
+                    class="partner-marquee-logo h-9 w-auto max-h-9 max-w-[min(9rem,28vw)] shrink-0 object-contain opacity-90 sm:h-11 sm:max-h-11 sm:max-w-[10rem]"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                )
+                return (
+                  <span class="flex shrink-0 items-center justify-center">
+                    {partner.url ? (
+                      <a
+                        href={partner.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        tabindex={-1}
+                        class="transition-opacity hover:opacity-100"
+                        aria-label={partner.name}
+                      >
+                        {img}
+                      </a>
+                    ) : (
+                      <span title={partner.name}>{img}</span>
+                    )}
+                  </span>
+                )
+              })
+            }
+          </div>
+        </div>
+      </div>
+    )
+  }
+</section>
+
+<style>
+  /* Full-bleed strip inside MainLayout’s padded column */
+  .partner-marquee-bleed {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+  }
+
+  @keyframes partner-marquee-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .partner-marquee-track {
+    animation: partner-marquee-scroll 55s linear infinite;
+  }
+
+  :global(.dark) .partner-marquee-bleed .partner-marquee-logo {
+    filter: grayscale(1) contrast(1.12) invert(1) brightness(1.1);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .partner-marquee-track {
+      animation: none;
+      flex-wrap: wrap;
+      row-gap: 1rem;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .partner-marquee-group--clone {
+      display: none;
+    }
+
+    .partner-marquee-group {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      row-gap: 1rem;
+      padding-right: 0;
+    }
+  }
+</style>
