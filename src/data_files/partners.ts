@@ -169,7 +169,54 @@ export const partners: Partner[] = [
     url: "https://iis.uva.nl/en",
     logo: "iis.jpg",
   },
-
+  {
+    name: "Cambridge Zero",
+    section: "Organizations that supported our events",
+    url: "https://www.zero.cam.ac.uk/",
+    logo: "CambridgeZero.png",
+  },
+  {
+    name: "Cambridge University Behavioural Insights Student Society",
+    section: "Organizations that supported our events",
+    url: "https://www.linkedin.com/company/cambridge-cubiss/",
+    logo: "CUBISS.png",
+  },
+  {
+    name: "Cambridge University Science and Policy Exchange",
+    section: "Organizations that supported our events",
+    url: "https://cuspe.org.uk/",
+    logo: "CUSPE-logo.png",
+  },
+  {
+    name: "Effective Altruism Cambridge",
+    section: "Organizations that supported our events",
+    url: "https://www.eacambridge.org/",
+    logo: "EA-cam.png",
+  },
+  {
+    name: "Homes England",
+    section: "Organizations that supported our events",
+    url: "https://www.gov.uk/government/organisations/homes-england",
+    logo: "Homes.png",
+  },
+  {
+    name: "The School for Moral Ambition",
+    section: "Organizations that supported our events",
+    url: "https://www.moralambition.org/",
+    logo: "SMA-logo-red.png",
+  },
+  {
+    name: "Cambridge University Technology & Enterprise Club",
+    section: "Organizations that supported our events",
+    url: "https://www.cutec.io/",
+    logo: "CUTEC.png",
+  },
+  {
+    name: "University of Cambridge",
+    section: "Organizations that supported our events",
+    url: "https://www.cam.ac.uk/",
+    logo: "UoC.png",
+  },
 
 
 ]
