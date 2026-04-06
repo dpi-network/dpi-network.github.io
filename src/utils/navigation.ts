@@ -3,7 +3,7 @@ const navBarLinks = [
   { name: "Home", url: "/" },
   { name: "About", url: "/about" },
   { name: "Partners", url: "/partners" },
-  { name: "Hackathons", url: "/" },
+  { name: "Hackathons", url: "/policy-hackathons" },
   // { name: "Products", url: "/products" },
   // { name: "Services", url: "/services" },
   // { name: "Blog", url: "/blog" },
@@ -14,6 +14,7 @@ const footerLinks = [
   {
     section: "Events",
     links: [
+      { name: "All hackathons (map)", url: "/policy-hackathons" },
       { name: "Amsterdam Policy Hackathon", url: "https://amsterdam.dpi.network/",},
       { name: "Cambridge Policy Hackathon", url: "https://cambridge.dpi.network/",},
       { name: "The Hague Policy Hackathon", url: "https://thehague.dpi.network/",},

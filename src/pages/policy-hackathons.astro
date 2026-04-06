@@ -1,0 +1,150 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import HackathonMap from "@components/sections/events/HackathonMap.astro";
+import TestimonialsSection from "@components/sections/testimonials/TestimonialsSection.astro";
+import { SITE } from "@data/constants";
+import { hackathons } from "@data/hackathons";
+import testemonialImage from "@images/tessa-clement.jpg";
+import Icon from "@components/ui/icons/Icon.astro";
+
+const pageTitle: string = `Policy hackathons | ${SITE.title}`;
+const metaDescription =
+  "Explore DPIN policy hackathons worldwide: interactive map, event hubs, and participant stories.";
+const ogTitle = `Policy hackathons | ${SITE.title}`;
+
+const sorted = [...hackathons].sort((a, b) => {
+  if (a.status !== b.status) return a.status === "upcoming" ? -1 : 1;
+  return a.title.localeCompare(b.title);
+});
+---
+
+<MainLayout
+  title={pageTitle}
+  customDescription={metaDescription}
+  customOgTitle={ogTitle}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${SITE.url}policy-hackathons`,
+    url: `${SITE.url}policy-hackathons`,
+    name: pageTitle,
+    description: metaDescription,
+    isPartOf: {
+      "@type": "WebSite",
+      url: SITE.url,
+      name: SITE.title,
+      description: SITE.description,
+    },
+    inLanguage: "en-US",
+  }}
+>
+  <div class="mx-auto max-w-2xl px-4 lg:max-w-5xl lg:px-6">
+    <div class="text-center">
+      <h1
+        class="mt-8 text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:mt-10 md:text-4xl md:leading-tight"
+      >
+        Policy Hackathons
+      </h1>
+      <p
+        class="mx-auto mt-2 max-w-3xl text-pretty text-neutral-600 dark:text-neutral-400 md:mt-4"
+      >
+        View our events across Europe. More TBA soon!
+      </p>
+    </div>
+
+    <section
+      id="map"
+      class="mt-10 lg:mt-12"
+      aria-label="Interactive map of hackathon locations"
+    >
+      <HackathonMap hackathons={hackathons} />
+    </section>
+
+    <section class="mt-16 lg:mt-20" aria-labelledby="events-list-heading">
+      <h2
+        id="events-list-heading"
+        class="text-balance text-2xl font-bold text-neutral-800 dark:text-neutral-200 md:text-3xl"
+      >
+        Event hubs
+      </h2>
+      <div class="mt-2 w-full md:mt-4">
+        <p class="w-full max-w-none text-pretty text-neutral-600 dark:text-neutral-400">
+          We have hackathons across Europe coming up. Follow us to see new announcements.
+        </p>
+      </div>
+      <ul class="mt-8 grid gap-6 sm:grid-cols-2">
+        {
+          sorted.map((h) => (
+            <li>
+              <a
+                href={h.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group flex h-full flex-col rounded-2xl border border-neutral-300 bg-white p-6 shadow-sm transition hover:border-red-200 hover:shadow-md dark:border-neutral-600 dark:bg-neutral-800/50 dark:hover:border-red-900/40"
+              >
+                <div class="flex items-start justify-between gap-3">
+                  <div>
+                    <span
+                      class={`inline-block max-w-full rounded-full px-2.5 py-1 text-xs font-semibold leading-snug text-white ${h.status === "upcoming" ? "bg-[#ff0101] dark:bg-[#ff3838]" : "bg-neutral-500 dark:bg-neutral-600"}`}
+                    >
+                      {h.badgeDate}
+                    </span>
+                    <h3 class="mt-3 text-xl font-semibold text-neutral-900 transition group-hover:text-[#ff0101] dark:text-neutral-100 dark:group-hover:text-[#ff3838]">
+                      {h.title}
+                    </h3>
+                  </div>
+                  <Icon
+                    name="arrowRight"
+                    class="size-5 shrink-0 text-neutral-400 transition group-hover:translate-x-0.5 group-hover:text-[#ff0101] dark:group-hover:text-[#ff3838]"
+                  />
+                </div>
+                <p class="mt-3 text-pretty text-neutral-600 dark:text-neutral-400">
+                  {h.shortDescription}
+                </p>
+                <p class="mt-4 text-sm text-neutral-500 dark:text-neutral-500">
+                  {h.city}, {h.country} · {h.dateLabel}
+                </p>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </div>
+
+  <TestimonialsSection
+    sectionId="testimonials"
+    title="Connect practitioners & communities"
+    subTitle="Leverage diverse perspectives from tech, academia, public sector and civil society to craft better-informed policy ideas."
+    testimonials={[
+      {
+        content:
+          "Joining this hackathon was both fun and valuable. For me, the best part was experimenting with ideas, meeting new people, and testing skills in a fast-paced setting. (...) As the founder of a health tech consultancy company, I loved seeing how students approach innovation in healthcare and AI",
+        author: "Tessa Clement",
+        role: "AI Governance Startup Founder | Panacea Inc..",
+        avatarSrc: testemonialImage.src,
+      },
+    ]}
+    statistics={[
+      {
+        count: "20+",
+        description:
+          "partner organizations — from funders to challenge providers.",
+      },
+      {
+        count: "170+",
+        description:
+          "interdisciplinary participants, collaborating on impactful projects using various expertises.",
+      },
+      {
+        count: "4",
+        description:
+          "challenge owners, from startups and municipalities to non-profits.",
+      },
+      {
+        count: "5+",
+        description: "upcoming events around the world.",
+      },
+    ]}
+  />
+</MainLayout>

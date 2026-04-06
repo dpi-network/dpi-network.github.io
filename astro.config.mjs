@@ -8,6 +8,9 @@ import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
+  redirects: {
+    "/events": "/policy-hackathons",
+  },
   // https://docs.astro.build/en/guides/images/#authorizing-remote-images
   site: "https://dpi.network",
   image: {

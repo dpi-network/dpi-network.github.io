@@ -1,5 +1,6 @@
 // Define data structures for services and success stories
 import testemonialsImage from "@images/starlight/dpin_logo.png";
+import { hackathons } from "./hackathons";
 
 export const servicesData = [
  {
@@ -46,42 +47,20 @@ export const servicesData = [
 
 export const successStoriesData = [
   {
-    image:
-      testemonialsImage,
-    alt: "Image Description",
+    image: testemonialsImage,
+    alt: "Data for Public Impact Network",
+    sectionTitle: "Map & testimonials",
     description:
-      "Read testemonials from participants and partners who have engaged with our hackathons.",
-    learnMoreUrl: "#",
+      "Explore hackathon locations on the interactive map, then scroll the events page for hubs and participant testimonials.",
+    learnMoreUrl: "/policy-hackathons",
+    learnMoreLabel: "View map & testimonials",
   },
 ];
 
-export const eventsData = [
-{
-    title: "Amsterdam Policy Hackathon",
-    description:
-      "Our flagship event, bringing together policymakers, technologists, and citizens to co-create innovative solutions for urban challenges.",
-    icon: "guides",
-    url: "https://amsterdam.dpi.network/",
-  },
-{
-    title: "Cambridge Policy Hackathon",
-    description:
-      "Our first international hackathon, focused on leveraging technology to address policy challenges in Cambridge and beyond.",
-    icon: "guides",
-    url: "https://cambridge.dpi.network/",
-  },
-{
-    title: "Maastricht Policy Hackathon",
-    description:
-      "Addressing policy challenges in the birthplace of the EU, this event focuses on cross-border collaboration and innovative policy solutions.",
-    icon: "guides",
-    url: "https://maastricht.dpi.network/",
-  },
-{
-    title: "The Hague Policy Hackathon",
-    description:
-      "Tackling Dutch and global policy challenges in the major political centre for Dutch politics and international organisations.",
-    icon: "guides",
-    url: "https://thehague.dpi.network/",
-  },
-];
+/** Derived from `hackathons.json` — add events there to update the menu and map. */
+export const eventsData = hackathons.map((h) => ({
+  title: h.title,
+  description: h.shortDescription,
+  icon: "guides" as const,
+  url: h.url,
+}));

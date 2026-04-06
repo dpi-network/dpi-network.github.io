@@ -1,0 +1,54 @@
+[
+  {
+    "id": "amsterdam",
+    "title": "Amsterdam Policy Hackathon",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "lat": 52.3676,
+    "lng": 4.9041,
+    "url": "https://amsterdam.dpi.network/",
+    "shortDescription": "Flagship event: policymakers, technologists, and citizens co-creating solutions for urban challenges.",
+    "status": "past",
+    "badgeDate": "Next up: TBA — follow us",
+    "dateLabel": "Recurring editions"
+  },
+  {
+    "id": "cambridge",
+    "title": "Cambridge Policy Hackathon",
+    "city": "Cambridge",
+    "country": "United Kingdom",
+    "lat": 52.2053,
+    "lng": 0.1218,
+    "url": "https://cambridge.dpi.network/",
+    "shortDescription": "International hackathon on technology and policy challenges in Cambridge and beyond.",
+    "status": "upcoming",
+    "badgeDate": "Next up: 14-16 Jun 2026",
+    "dateLabel": "Recurring editions"
+  },
+  {
+    "id": "maastricht",
+    "title": "Maastricht Policy Hackathon",
+    "city": "Maastricht",
+    "country": "Netherlands",
+    "lat": 50.8514,
+    "lng": 5.691,
+    "url": "https://maastricht.dpi.network/",
+    "shortDescription": "Cross-border collaboration and innovative policy in the birthplace of the EU.",
+    "status": "past",
+    "badgeDate": "Next up: TBA — follow us",
+    "dateLabel": "Recurring editions"
+  },
+  {
+    "id": "the-hague",
+    "title": "The Hague Policy Hackathon",
+    "city": "The Hague",
+    "country": "Netherlands",
+    "lat": 52.0705,
+    "lng": 4.3007,
+    "url": "https://thehague.dpi.network/",
+    "shortDescription": "Dutch and global policy challenges in a major centre for politics and international organisations.",
+    "status": "past",
+    "badgeDate": "Next up: TBA — follow us",
+    "dateLabel": "Recurring editions"
+  }
+]
