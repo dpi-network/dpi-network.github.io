@@ -1,7 +1,7 @@
 ---
 // Import the necessary dependencies
 import FooterSocialLink from "@components/ui/links/FooterSocialLink.astro";
-import EmailFooterInput from "@components/ui/forms/input/EmailFooterInput.astro";
+import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import enStrings from "@utils/navigation.ts";
 import frStrings from "@utils/fr/navigation.ts";
 import Icon from "@components/ui/icons/Icon.astro";
@@ -14,8 +14,9 @@ const strings = Astro.currentLocale === "fr" ? frStrings : enStrings;
 // Define the variables that will be used in this component
 const sectionThreeTitle: string = Astro.currentLocale === "fr" ? "Rester à jour" : "Stay up to date";
 const sectionThreeContent: string = Astro.currentLocale === "fr" ? "Restez informé des derniers outils et des offres exclusives." :
-  "Stay updated with all things DPIN.";
+  "Sign up to our mailinglist.";
 const crafted: string = Astro.currentLocale === "fr" ? "Fabriqué par" : "Website framework by";
+const signUpLabel: string = Astro.currentLocale === "fr" ? "S'inscrire" : "Sign up";
 ---
 
 <footer class="w-full bg-neutral-300 dark:bg-neutral-900">
@@ -61,10 +62,13 @@ const crafted: string = Astro.currentLocale === "fr" ? "Fabriqué par" : "Websit
         </h3>
 
         <form>
-          <EmailFooterInput />
+          <!-- <EmailFooterInput /> -->
           <p class="mt-3 text-sm text-neutral-600 dark:text-neutral-400">
             {sectionThreeContent}
           </p>
+          <div class="mt-3 inline-flex">
+            <PrimaryCTA title={signUpLabel} url="#" />
+          </div>
         </form>
       </div>
     </div>

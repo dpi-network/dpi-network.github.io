@@ -12,7 +12,7 @@ const navBarLinks = [
 // An array of links for footer
 const footerLinks = [
   {
-    section: "Ecosystem",
+    section: "Events",
     links: [
       { name: "Amsterdam Policy Hackathon", url: "https://amsterdam.dpi.network/",},
       { name: "Cambridge Policy Hackathon", url: "https://cambridge.dpi.network/",},
@@ -21,7 +21,7 @@ const footerLinks = [
     ],
   },
   {
-    section: "Foundation",
+    section: "DPIN",
     links: [
       { name: "About", url: "/about" },
       // { name: "Blog", url: "/blog" },

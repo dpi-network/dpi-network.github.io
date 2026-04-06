@@ -1,5 +1,4 @@
 ---
-import Icon from "@components/ui/icons/Icon.astro";
 const { title, url } = Astro.props;
 
 interface Props {
@@ -8,7 +7,7 @@ interface Props {
 }
 
 const baseClasses =
-  "group inline-flex items-center justify-center gap-x-3 rounded-lg px-4 py-3 text-center text-sm font-medium text-white ring-zinc-500 focus-visible:ring-3 transition duration-300 outline-hidden";
+  "group inline-flex items-center justify-center gap-x-2 rounded-lg px-4 py-3 text-center text-sm font-medium text-white ring-zinc-500 focus-visible:ring-3 transition duration-300 outline-hidden";
 const borderClasses = "border border-transparent";
 const bgColorClasses = "bg-[#ff0101] dark:focus:outline-hidden";
 const hoverClasses = "hover:shadow-2xl hover:shadow-red-500/40";
@@ -22,6 +21,5 @@ const ringClasses = "dark:ring-zinc-200";
   target="_blank"
   rel="noopener noreferrer"
 >
-  <Icon name="github" />
   {title}
 </a>
