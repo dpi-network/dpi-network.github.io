@@ -34,7 +34,7 @@ const footerLinks = [
 // An object of links for social icons
 const socialLinks = {
   linkedin: "https://www.linkedin.com/company/dpi-network",
-  instagram: "https://www.instagram.com/dpinetwork/",
+  instagram: "https://www.instagram.com/dpi.network/",
   // facebook: "https://www.facebook.com/",
   // x: "https://twitter.com/",
   // github: "https://github.com/mearashadowfax/ScrewFast",
