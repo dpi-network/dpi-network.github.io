@@ -1,0 +1,151 @@
+---
+import BlogPostLayout from "@/layouts/BlogPostLayout.astro";
+import { SITE } from "@data/constants";
+import { blogAuthorJsonLd, getBlogPostBySlug } from "@data/blogPosts";
+import coverUrl from "./cover.svg?url";
+import teamsIllustrationUrl from "./teams-illustration.svg?url";
+
+const slug = "building-cross-disciplinary-teams";
+const listing = getBlogPostBySlug(slug);
+const author = listing?.author ?? "DPIN Team";
+const pubDate = listing?.pubDate ?? new Date("2026-03-15");
+
+const pageTitle = `Why cross-disciplinary teams matter for policy hackathons | ${SITE.title}`;
+const metaDescription =
+  "How DPIN policy hackathons combine data, law, design, and public administration to tackle complex challenges in a short sprint.";
+const canonicalUrl = `${SITE.url.replace(/\/$/, "")}/blog/${slug}/`;
+---
+
+<BlogPostLayout
+  slug={slug}
+  pageTitle={pageTitle}
+  customDescription={metaDescription}
+  customOgTitle={pageTitle}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: "Why cross-disciplinary teams matter for policy hackathons",
+    description: metaDescription,
+    datePublished: pubDate.toISOString(),
+    author: blogAuthorJsonLd(author),
+    publisher: {
+      "@type": "Organization",
+      name: SITE.title,
+      url: SITE.url,
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
+    url: canonicalUrl,
+    inLanguage: "en-US",
+  }}
+>
+  <article class="mx-auto max-w-2xl px-4 pb-16 pt-12 lg:max-w-3xl lg:px-6">
+    <header class="text-center">
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+        <span class="font-medium text-neutral-600 dark:text-neutral-300"
+          >By {author}</span
+        >
+        <span class="mx-2 text-neutral-300 dark:text-neutral-600" aria-hidden="true"
+          >·</span
+        >
+        <time datetime={pubDate.toISOString()}>
+          {
+            pubDate.toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })
+          }
+        </time>
+      </p>
+      <h1
+        class="mt-2 text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
+      >
+        Why cross-disciplinary teams matter for policy hackathons
+      </h1>
+      <p class="mx-auto mt-3 max-w-2xl text-pretty text-neutral-600 dark:text-neutral-400">
+        Real-world policy questions rarely sit inside a single discipline. Our
+        events are built around that fact.
+      </p>
+    </header>
+
+    <figure class="mt-10 overflow-hidden rounded-2xl border border-neutral-200 dark:border-neutral-700">
+      <img
+        src={coverUrl}
+        alt=""
+        width={1200}
+        height={630}
+        class="w-full object-cover"
+      />
+    </figure>
+
+    <div
+      class="mt-10 space-y-4 text-pretty leading-relaxed text-neutral-700 dark:text-neutral-300"
+    >
+      <p>
+        Policy hackathons compress months of scoping and alignment into a few
+        intense days. That only works when the room includes more than one way
+        of seeing the problem.
+      </p>
+      <h2
+        class="mt-10 text-xl font-semibold text-neutral-800 dark:text-neutral-200"
+      >
+        Complementary lenses
+      </h2>
+      <p>
+        Technical contributors ask what can be measured and prototyped;
+        legal and governance perspectives surface constraints and legitimacy;
+        design and communication roles keep outputs usable for decision-makers
+        and the public. Together, teams avoid elegant solutions that miss the
+        brief — or careful analysis that never ships.
+      </p>
+
+      <figure
+        class="my-10 overflow-hidden rounded-xl border border-neutral-200 bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-900/40"
+      >
+        <img
+          src={teamsIllustrationUrl}
+          alt="Diagram: Data, Policy, and Design as connected nodes"
+          width={800}
+          height={400}
+          class="w-full"
+          loading="lazy"
+        />
+        <figcaption
+          class="px-4 py-3 text-center text-sm text-neutral-500 dark:text-neutral-400"
+        >
+          Illustration for this post (stored alongside this article in the same
+          folder).
+        </figcaption>
+      </figure>
+
+      <h2
+        class="mt-10 text-xl font-semibold text-neutral-800 dark:text-neutral-200"
+      >
+        What we optimise for
+      </h2>
+      <p>
+        DPIN hackathons emphasise <strong class="text-neutral-900 dark:text-neutral-100">shared language</strong> early,
+        <strong class="text-neutral-900 dark:text-neutral-100">small experiments</strong> over perfect plans, and{" "}
+        <strong class="text-neutral-900 dark:text-neutral-100">stakeholder-ready artefacts</strong> by the closing session.
+        Cross-disciplinary teams are not a nice-to-have — they are how we
+        make that pace responsible as well as productive.
+      </p>
+      <p>
+        Interested in joining a future event? See{" "}
+        <a
+          href="/policy-hackathons/"
+          class="font-medium text-[#ff0101] underline-offset-2 hover:underline dark:text-[#ff3838]"
+          >policy hackathons</a
+        > for hubs and announcements.
+      </p>
+    </div>
+
+    <p class="mt-12 text-center">
+      <a
+        href="/blog/"
+        class="text-sm font-medium text-[#ff0101] hover:underline dark:text-[#ff3838]"
+        >← Back to all posts</a
+      >
+    </p>
+  </article>
+</BlogPostLayout>

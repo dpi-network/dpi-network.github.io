@@ -6,7 +6,7 @@ const navBarLinks = [
   { name: "Hackathons", url: "/policy-hackathons" },
   // { name: "Products", url: "/products" },
   // { name: "Services", url: "/services" },
-  // { name: "Blog", url: "/blog" },
+  { name: "Blog", url: "/blog" },
   { name: "Contact", url: "/contact" },
 ];
 // An array of links for footer
@@ -25,7 +25,7 @@ const footerLinks = [
     section: "DPIN",
     links: [
       { name: "About", url: "/about" },
-      // { name: "Blog", url: "/blog" },
+      { name: "Blog", url: "/blog" },
       { name: "Partners", url: "/partners" },
       { name: "Join us", url: "#" },
     ],

@@ -1,0 +1,101 @@
+---
+import BlogPostLayout from "@/layouts/BlogPostLayout.astro";
+import { SITE } from "@data/constants";
+import { blogAuthorJsonLd, getBlogPostBySlug } from "@data/blogPosts";
+import coverUrl from "./cover.svg?url";
+
+const slug = "welcome-to-the-blog";
+const listing = getBlogPostBySlug(slug);
+const author = listing?.author ?? "DPIN Team";
+const pubDate = listing?.pubDate ?? new Date("2026-04-08");
+
+const pageTitle = `Welcome to the DPIN blog | ${SITE.title}`;
+const metaDescription = "Introduction.";
+const canonicalUrl = `${SITE.url.replace(/\/$/, "")}/blog/${slug}/`;
+---
+
+<BlogPostLayout
+  slug={slug}
+  pageTitle={pageTitle}
+  customDescription={metaDescription}
+  customOgTitle={pageTitle}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: "Welcome to the DPIN blog",
+    description: metaDescription,
+    datePublished: pubDate.toISOString(),
+    author: blogAuthorJsonLd(author),
+    publisher: {
+      "@type": "Organization",
+      name: SITE.title,
+      url: SITE.url,
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
+    url: canonicalUrl,
+    inLanguage: "en-US",
+  }}
+>
+  <article class="mx-auto max-w-2xl px-4 pb-16 pt-12 lg:max-w-3xl lg:px-6">
+    <header class="text-center">
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+        <span class="font-medium text-neutral-600 dark:text-neutral-300"
+          >By {author}</span
+        >
+        <span class="mx-2 text-neutral-300 dark:text-neutral-600" aria-hidden="true"
+          >·</span
+        >
+        <time datetime={pubDate.toISOString()}>
+          {
+            pubDate.toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })
+          }
+        </time>
+      </p>
+      <h1
+        class="mt-2 text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
+      >
+        Welcome to the DPIN blog
+      </h1>
+      <p class="mx-auto mt-3 max-w-2xl text-pretty text-neutral-600 dark:text-neutral-400">
+        A place for announcements, lessons from our hackathons, and thoughts on interesting topics.
+      </p>
+    </header>
+
+    <figure class="mt-10 overflow-hidden rounded-2xl border border-neutral-200 dark:border-neutral-700">
+      <img
+        src={coverUrl}
+        alt=""
+        width={1200}
+        height={630}
+        class="w-full object-cover"
+      />
+    </figure>
+
+    <div
+      class="mt-10 space-y-4 text-pretty leading-relaxed text-neutral-700 dark:text-neutral-300"
+    >
+      <p>Under construction.</p>
+      <p>
+        Thank you for being part of the network. If you would like to
+        contribute a guest post or suggest a topic, reach us via the{" "}
+        <a
+          href="/contact/"
+          class="font-medium text-[#ff0101] underline-offset-2 hover:underline dark:text-[#ff3838]"
+          >contact page</a
+        >.
+      </p>
+    </div>
+
+    <p class="mt-12 text-center">
+      <a
+        href="/blog/"
+        class="text-sm font-medium text-[#ff0101] hover:underline dark:text-[#ff3838]"
+        >← Back to all posts</a
+      >
+    </p>
+  </article>
+</BlogPostLayout>
