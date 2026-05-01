@@ -217,6 +217,10 @@ export const partners: Partner[] = [
     url: "https://www.cam.ac.uk/",
     logo: "UoC.png",
   },
-
-
+  {
+    name: "City of The Hague",
+    section: "Organizations that supported our events",
+    url: "https://www.denhaag.nl/en/",
+    logo: "City_of_The_Hague.png",
+  },
 ]
