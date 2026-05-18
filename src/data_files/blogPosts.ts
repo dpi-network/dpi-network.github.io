@@ -35,6 +35,15 @@ export const blogPosts: BlogPostSummary[] = [
     coverUrl: coverWelcome,
     author: "DPIN Team",
   },
+  {
+    slug: "public-engagement",
+    title: "Public engagement for scientists and policymakers",
+    description:
+      "FILL1",
+    pubDate: new Date("2026-04-08"),
+    coverUrl: coverWelcome,
+    author: "DPIN Team",
+  },
   // {
   //   slug: "building-cross-disciplinary-teams",
   //   title: "Why cross-disciplinary teams matter for policy hackathons",
