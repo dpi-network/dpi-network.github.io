@@ -223,4 +223,10 @@ export const partners: Partner[] = [
     url: "https://www.denhaag.nl/en/",
     logo: "City_of_The_Hague.png",
   },
+  {
+    name: "Student Project Fund",
+    section: "Organizations that supported our events",
+    url: "https://www.studentprojectfund.com/en/",
+    logo: "logo-spf.png",
+  },
 ]
