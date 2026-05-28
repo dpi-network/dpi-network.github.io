@@ -1,0 +1,99 @@
+---
+import Icon from "@components/ui/icons/Icon.astro";
+import type { Principle } from "@data/about";
+
+interface Props {
+  mission: { title: string; text: string };
+  vision: { title: string; text: string };
+  principlesHeading: string;
+  principles: Principle[];
+}
+
+const { mission, vision, principlesHeading, principles } = Astro.props;
+
+const dpiRed = "#ff0101";
+---
+
+<section class="pb-4 sm:pb-6" aria-labelledby="about-mission-heading">
+  <div class="grid gap-5 md:grid-cols-2 md:gap-6">
+    <article
+      class="relative overflow-hidden rounded-2xl border border-neutral-200/90 bg-linear-to-br from-neutral-50 to-white px-6 py-6 dark:border-neutral-700/90 dark:from-neutral-900/80 dark:to-neutral-900/40 sm:px-7 sm:py-7"
+    >
+      <span
+        class="absolute inset-y-4 left-0 w-1 rounded-full"
+        style={`background-color: ${dpiRed}`}
+        aria-hidden="true"
+      />
+      <div class="pl-4">
+        <h2
+          id="about-mission-heading"
+          class="text-sm font-semibold tracking-wide text-[#ff0101] uppercase dark:text-[#ff3838]"
+        >
+          {mission.title}
+        </h2>
+        <p
+          class="mt-2 text-pretty text-sm leading-relaxed text-neutral-700 dark:text-neutral-300 sm:text-base"
+        >
+          {mission.text}
+        </p>
+      </div>
+    </article>
+
+    <article
+      class="relative overflow-hidden rounded-2xl border border-neutral-200/90 bg-linear-to-br from-neutral-50 to-white px-6 py-6 dark:border-neutral-700/90 dark:from-neutral-900/80 dark:to-neutral-900/40 sm:px-7 sm:py-7"
+    >
+      <span
+        class="absolute inset-y-4 left-0 w-1 rounded-full"
+        style={`background-color: ${dpiRed}`}
+        aria-hidden="true"
+      />
+      <div class="pl-4">
+        <h2
+          class="text-sm font-semibold tracking-wide text-[#ff0101] uppercase dark:text-[#ff3838]"
+        >
+          {vision.title}
+        </h2>
+        <p
+          class="mt-2 text-pretty text-sm leading-relaxed text-neutral-700 dark:text-neutral-300 sm:text-base"
+        >
+          {vision.text}
+        </p>
+      </div>
+    </article>
+  </div>
+
+  <div class="mt-10 sm:mt-12">
+    <h2
+      class="mb-5 text-center text-lg font-bold tracking-tight text-neutral-800 dark:text-neutral-200 sm:mb-6 sm:text-xl"
+    >
+      {principlesHeading}
+    </h2>
+    <ul
+      class="grid list-none gap-4 p-0 sm:grid-cols-2 lg:grid-cols-4"
+      role="list"
+    >
+      {
+        principles.map((principle) => (
+          <li>
+            <article class="group relative flex h-full flex-col rounded-xl border border-neutral-200/80 bg-white/60 px-4 pb-5 pt-4 shadow-sm transition-shadow hover:shadow-md dark:border-neutral-700/80 dark:bg-neutral-900/50 dark:hover:shadow-neutral-900/40 sm:px-4 sm:pb-5 sm:pt-4">
+              <span
+                class="absolute top-0 right-4 left-4 h-0.5 rounded-full opacity-90 transition-opacity group-hover:opacity-100"
+                style={`background: linear-gradient(90deg, ${dpiRed}, transparent)`}
+                aria-hidden="true"
+              />
+              <div class="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-red-50 dark:bg-red-950/50">
+                <Icon name={principle.icon} />
+              </div>
+              <h3 class="text-sm font-bold text-neutral-900 dark:text-neutral-100">
+                {principle.title}
+              </h3>
+              <p class="mt-1.5 flex-1 text-pretty text-xs leading-relaxed text-neutral-600 dark:text-neutral-400">
+                {principle.description}
+              </p>
+            </article>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

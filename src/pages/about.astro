@@ -1,16 +1,18 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
+import AboutMissionSection from "@components/sections/about/AboutMissionSection.astro";
 import Team from "@components/Team.astro";
+import { aboutContent } from "@data/about";
 import { SITE } from "@data/constants";
 import { people } from "@data/people";
 
 const pageTitle: string = `About | ${SITE.title}`;
 const metaDescription =
-  "Meet the Data for Public Impact Network team: executive board, policy hackathon leads across cities, advisory board, and honorary members.";
+  "Learn about the Data for Public Impact Network—our mission, vision, and principles—and meet the team behind policy hackathons and community programs.";
 const ogTitle = `About | ${SITE.title}`;
 
-const title: string = "Our Team";
-const subTitle: string =
+const teamTitle: string = "Our Team";
+const teamSubTitle: string =
   "Turning outreach and caffeine into events and organizations!";
 ---
 
@@ -35,14 +37,29 @@ const subTitle: string =
   }}
 >
   <div class="mx-auto mt-12 max-w-2xl px-4 lg:max-w-5xl lg:px-6">
-    <div class="text-center">
+    <div class="mb-8 text-center sm:mb-10">
       <h1
         class="text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
       >
-        {title}
+        {aboutContent.pageTitle}
       </h1>
+    </div>
+
+    <AboutMissionSection
+      mission={aboutContent.mission}
+      vision={aboutContent.vision}
+      principlesHeading={aboutContent.principlesHeading}
+      principles={aboutContent.principles}
+    />
+
+    <div class="border-t border-neutral-200/80 pt-10 text-center dark:border-neutral-700/80 sm:pt-12">
+      <h2
+        class="text-balance text-xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-3xl md:leading-tight"
+      >
+        {teamTitle}
+      </h2>
       <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-400">
-        {subTitle}
+        {teamSubTitle}
       </p>
     </div>
     <Team members={people} />
