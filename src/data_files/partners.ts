@@ -29,6 +29,17 @@ export function partnersInEventSupportSections(
   )
 }
 
+/** One entry per partner name — for logo marquees where the same org may appear in multiple sections. */
+export function uniquePartnersByName(list: Partner[]): Partner[] {
+  const seen = new Set<string>()
+  return list.filter((p) => {
+    const key = p.name.trim().toLowerCase()
+    if (seen.has(key)) return false
+    seen.add(key)
+    return true
+  })
+}
+
 export interface Partner {
   name: string
 
