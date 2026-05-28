@@ -1,13 +1,11 @@
 ---
 import type { Partner } from "@data/partners"
-import { partnersInSection } from "@data/partners"
+import { partnersInEventSupportSections } from "@data/partners"
 import { resolvePartnerLogo } from "@utils/partnerLogos"
-
-const SECTION = "Organizations that supported our events" as const
 
 const { list } = Astro.props as { list: Partner[] }
 
-const withLogos = partnersInSection(SECTION, list)
+const withLogos = partnersInEventSupportSections(list)
   .map((p) => ({
     ...p,
     logoSrc: resolvePartnerLogo(p.logo) ?? "",

@@ -1,7 +1,8 @@
 ---
 import type { Partner } from "@data/partners"
 import {
-  PARTNER_SECTION_ORDER,
+  EVENT_SUPPORT_GROUP_TITLE,
+  EVENT_SUPPORT_PARTNER_SECTIONS,
   partnersInSection,
 } from "@data/partners"
 import { resolvePartnerLogo } from "@utils/partnerLogos"
@@ -14,6 +15,11 @@ const logoUrlByName = Object.fromEntries(
 ) as Record<string, string>
 
 const dpiRed = "#ff0101"
+const groupSlug = "organizations-that-supported-our-events"
+
+function sectionSlug(sectionId: string): string {
+  return sectionId.replace(/\s+/g, "-").toLowerCase()
+}
 
 function peopleLabel(count: number): string {
   return count === 1 ? "partner" : "partners"
@@ -21,56 +27,70 @@ function peopleLabel(count: number): string {
 ---
 
 <section class="py-10 sm:py-14">
-  <div class="space-y-16 sm:space-y-20">
-    {
-      PARTNER_SECTION_ORDER.map((sectionId) => {
-        const sectionPartners = partnersInSection(sectionId, list)
-        return (
-          <section
-            class="scroll-mt-24"
-            aria-labelledby={`partners-heading-${sectionId.replace(/\s+/g, "-").toLowerCase()}`}
-          >
-            <div class="mb-8 flex flex-col gap-2 border-b border-neutral-300/80 pb-4 dark:border-neutral-600/80 sm:mb-10 sm:flex-row sm:items-end sm:justify-between">
-              <h2
-                id={`partners-heading-${sectionId.replace(/\s+/g, "-").toLowerCase()}`}
-                class="flex items-center gap-3 text-xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-2xl"
-              >
-                <span
-                  class="h-8 w-1.5 shrink-0 rounded-full"
-                  style={`background-color: ${dpiRed}`}
-                  aria-hidden="true"
-                />
-                <span>{sectionId}</span>
-              </h2>
-              <p class="text-sm text-neutral-500 dark:text-neutral-400">
-                {sectionPartners.length}{" "}
-                {peopleLabel(sectionPartners.length)}
-              </p>
-            </div>
+  <section
+    class="scroll-mt-24 space-y-12 sm:space-y-16"
+    aria-labelledby={`partners-heading-${groupSlug}`}
+  >
+    <div class="border-b border-neutral-300/80 pb-4 dark:border-neutral-600/80">
+      <h2
+        id={`partners-heading-${groupSlug}`}
+        class="flex items-center gap-3 text-xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-2xl"
+      >
+        <span
+          class="h-8 w-1.5 shrink-0 rounded-full"
+          style={`background-color: ${dpiRed}`}
+          aria-hidden="true"
+        />
+        <span>{EVENT_SUPPORT_GROUP_TITLE}</span>
+      </h2>
+    </div>
 
-            {sectionPartners.length === 0 ? (
-              <p class="rounded-xl border border-dashed border-neutral-300 bg-neutral-100/80 px-5 py-10 text-center text-sm text-neutral-500 dark:border-neutral-600 dark:bg-neutral-900/50 dark:text-neutral-400">
-                Partners for this category will be listed here soon.
-              </p>
-            ) : (
-              <ul class="grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3 md:grid-cols-5 lg:grid-cols-6 lg:gap-4">
-                {sectionPartners.map((partner) => {
-                  const logoSrc = logoUrlByName[partner.name] ?? ""
-                  const hasLogo = logoSrc.length > 0
-                  return (
-                    <PartnerCard
-                      name={partner.name}
-                      logoSrc={logoSrc}
-                      hasLogo={hasLogo}
-                      url={partner.url}
-                    />
-                  )
-                })}
-              </ul>
-            )}
-          </section>
-        )
-      })
-    }
-  </div>
+    <div class="space-y-14 sm:space-y-16">
+      {
+        EVENT_SUPPORT_PARTNER_SECTIONS.map((sectionId) => {
+          const sectionPartners = partnersInSection(sectionId, list)
+          const slug = sectionSlug(sectionId)
+          return (
+            <section
+              class="scroll-mt-24"
+              aria-labelledby={`partners-heading-${groupSlug}-${slug}`}
+            >
+              <div class="mb-6 flex flex-col gap-2 border-b border-neutral-200/90 pb-3 dark:border-neutral-700/90 sm:mb-8 sm:flex-row sm:items-end sm:justify-between">
+                <h3
+                  id={`partners-heading-${groupSlug}-${slug}`}
+                  class="text-lg font-semibold tracking-tight text-neutral-800 dark:text-neutral-200 sm:text-xl"
+                >
+                  {sectionId}
+                </h3>
+                <p class="text-sm text-neutral-500 dark:text-neutral-400">
+                  {sectionPartners.length}{" "}
+                  {peopleLabel(sectionPartners.length)}
+                </p>
+              </div>
+              {sectionPartners.length === 0 ? (
+                <p class="rounded-xl border border-dashed border-neutral-300 bg-neutral-100/80 px-5 py-10 text-center text-sm text-neutral-500 dark:border-neutral-600 dark:bg-neutral-900/50 dark:text-neutral-400">
+                  Partners for this category will be listed here soon.
+                </p>
+              ) : (
+                <ul class="grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3 md:grid-cols-5 lg:grid-cols-6 lg:gap-4">
+                  {sectionPartners.map((partner) => {
+                    const logoSrc = logoUrlByName[partner.name] ?? ""
+                    const hasLogo = logoSrc.length > 0
+                    return (
+                      <PartnerCard
+                        name={partner.name}
+                        logoSrc={logoSrc}
+                        hasLogo={hasLogo}
+                        url={partner.url}
+                      />
+                    )
+                  })}
+                </ul>
+              )}
+            </section>
+          )
+        })
+      }
+    </div>
+  </section>
 </section>
