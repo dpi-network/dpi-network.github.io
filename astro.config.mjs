@@ -10,6 +10,8 @@ import mdx from "@astrojs/mdx";
 export default defineConfig({
   redirects: {
     "/events": "/policy-hackathons",
+    "/blog/cjbs-news-28052026":
+      "https://www.jbs.cam.ac.uk/2026/cambridge-policy-hackathon/",
   },
   // https://docs.astro.build/en/guides/images/#authorizing-remote-images
   site: "https://dpi.network",

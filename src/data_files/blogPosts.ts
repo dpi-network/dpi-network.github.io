@@ -1,7 +1,8 @@
 /**
- * Blog listing metadata. Each post lives in `src/pages/blog/<slug>/` with its
- * own `index.astro` and any images (e.g. `cover.svg`) in that same folder.
- * Add a new entry when you add a new post folder.
+ * Blog listing metadata. Each on-site post lives in `src/pages/blog/<slug>/`
+ * with its own `index.astro` and any images (e.g. `cover.svg`) in that folder.
+ * For partner articles, set `externalUrl` instead — no local page is required.
+ * Add a new entry when you add a new post folder or external link.
  *
  * Visibility: set `visible: false` on an entry to remove it from `/blog` and
  * show an “unavailable” page at its URL (with noindex). Wrap the page in
@@ -10,6 +11,7 @@
 import { SITE } from "@data/constants";
 import coverCrossDisciplinary from "../pages/blog/building-cross-disciplinary-teams/cover.svg?url";
 import coverWelcome from "../pages/blog/welcome-to-the-blog/cover.svg?url";
+import coverCjbsNews from "../pages/blog/cjbs-news-28052026/cph2026-CJBS-news.jpg?url";
 
 export interface BlogPostSummary {
   slug: string;
@@ -18,6 +20,11 @@ export interface BlogPostSummary {
   pubDate: Date;
   coverUrl: string;
   author: string;
+  /**
+   * When set, the blog listing links here instead of `/blog/<slug>/`.
+   * Use for articles published on partner sites.
+   */
+  externalUrl?: string;
   /**
    * When `false`, the post is hidden from `/blog` and its URL shows an
    * “unavailable” message with `noindex`. Omit or `true` for a normal public post.
@@ -36,14 +43,25 @@ export const blogPosts: BlogPostSummary[] = [
     author: "DPIN Team",
   },
   {
-    slug: "public-engagement",
-    title: "Public engagement for scientists and policymakers",
+    slug: "cjbs-news-28052026",
+    title: "Cambridge Policy Hackathon organised by Cambridge Judge students",
     description:
-      "FILL1",
-    pubDate: new Date("2026-04-08"),
-    coverUrl: coverWelcome,
-    author: "DPIN Team",
+      "Coverage from Cambridge Judge Business School on our May 2026 policy hackathon.",
+    pubDate: new Date("2026-05-28"),
+    coverUrl: coverCjbsNews,
+    author: "Cambridge Judge Business School",
+    externalUrl:
+      "https://www.jbs.cam.ac.uk/2026/cambridge-policy-hackathon/",
   },
+  // {
+  //   slug: "public-engagement",
+  //   title: "Public engagement for scientists and policymakers",
+  //   description:
+  //     "FILL1",
+  //   pubDate: new Date("2026-04-08"),
+  //   coverUrl: coverWelcome,
+  //   author: "DPIN Team",
+  // },
   // {
   //   slug: "building-cross-disciplinary-teams",
   //   title: "Why cross-disciplinary teams matter for policy hackathons",
@@ -70,6 +88,10 @@ export function getBlogPostBySlug(
   slug: string
 ): BlogPostSummary | undefined {
   return blogPosts.find((p) => p.slug === slug);
+}
+
+export function getBlogPostHref(post: BlogPostSummary): string {
+  return post.externalUrl ?? `/blog/${post.slug}/`;
 }
 
 /** `false` when the post exists in the registry and is marked `visible: false`. */

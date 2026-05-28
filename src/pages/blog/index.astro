@@ -1,7 +1,7 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
 import { SITE } from "@data/constants";
-import { getSortedVisibleBlogPosts } from "@data/blogPosts";
+import { getBlogPostHref, getSortedVisibleBlogPosts } from "@data/blogPosts";
 import { formatDate } from "@utils/utils";
 
 const posts = getSortedVisibleBlogPosts();
@@ -55,9 +55,11 @@ const subTitle =
         posts.map((post) => (
           <li>
             <a
-              href={`/blog/${post.slug}/`}
+              href={getBlogPostHref(post)}
+              target={post.externalUrl ? "_blank" : undefined}
+              rel={post.externalUrl ? "noopener noreferrer" : undefined}
               class="group flex h-full flex-col overflow-hidden rounded-2xl border border-neutral-300 bg-white shadow-sm transition hover:border-red-200 hover:shadow-md dark:border-neutral-600 dark:bg-neutral-800/50 dark:hover:border-red-900/40"
-              data-astro-prefetch
+              data-astro-prefetch={post.externalUrl ? undefined : true}
             >
               <div class="aspect-[1200/630] w-full overflow-hidden bg-neutral-100 dark:bg-neutral-900">
                 <img
@@ -89,7 +91,7 @@ const subTitle =
                 <span
                   class="mt-4 inline-flex text-sm font-medium text-[#ff0101] dark:text-[#ff3838]"
                 >
-                  Read more →
+                  {post.externalUrl ? "Read on CJBS →" : "Read more →"}
                 </span>
               </div>
             </a>
