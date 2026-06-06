@@ -19,7 +19,6 @@ export interface Role {
 export interface Person {
   name: string
   primaryRole: string
-  /** Short biography shown in the profile modal */
   bio: string
   /**
    * File path under `src/images/team/` (you choose the filename).
@@ -73,7 +72,7 @@ export const people: Person[] = [
     ],
   },
   {
-    name: "Ecaterina Găitan-Caty",
+    name: "Ecaterina (Caty) Găitan",
     primaryRole: "Co-Director",
     bio: "",
     photo: "caty.jpeg",
@@ -150,10 +149,10 @@ export const people: Person[] = [
 
   // Advisory Board
   {
-    name: "Christina Caljé",
+    name: "Christian Neubacher",
     primaryRole: "Advisor",
-    bio: "",
-    photo: "",
+    bio: "Christian Neubacher is a Policy Engagement Planning Coordinator for CSaP. Prior to joining CSaP Christian completed a Master of Public Policy from the University of Michigan, where he also holds a BA in Economics and International Studies. He has also completed a Master's in European Politics from Columbia University. Christian has previously interned with the Executive Office of the Secretary-General at the United Nations, the International Organisation for Migration, and the European Banking Federation, alongside extensive experience in youth engagement.",
+    photo: "christian.png",
     roles: [{ team: "Advisory Board", role: "Advisor" }],
   },
 
