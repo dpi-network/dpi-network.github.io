@@ -8,36 +8,36 @@ export const aboutContent = {
   pageTitle: "About DPIN",
   mission: {
     title: "Mission",
-    text: "We connect students, researchers, and young professionals with peers and impact-driven organisations, empowering them to apply their skills to real societal challenges through interdisciplinary and sociotechnical collaboration.",
+    text: "Most policy challenges sit at the intersection of multiple disciplines. Yet, the people working on them rarely cross those boundaries. We aim to change that. DPIN unites students, researchers, and young professionals with leading public and private institutions to address today's most pressing, complex societal challenges.",
   },
   vision: {
     title: "Vision",
-    text: "A global network where ambitious learners, policy innovators, and change makers collaborate across disciplines and borders to turn data, technology, and ideas into lasting public impact.",
+    text: "A global network where ambitious learners, innovators, and change makers collaborate across disciplines and borders to turn data, technology, and ideas into lasting public impact.",
   },
   principlesHeading: "Our principles",
   principles: [
     {
       title: "Collaboration",
       description:
-        "We bridge disciplines, institutions, and communities so diverse perspectives strengthen every solution.",
+        "Diverse perspectives create stronger policy. We unite them.",
       icon: "groups",
     },
     {
       title: "Impact first",
       description:
-        "We focus on challenges defined by partners and communities, with outcomes that matter beyond the event.",
+        "We source challenges from public and private institutions, and we design solutions for lasting change.",
       icon: "earth",
     },
     {
       title: "Learn by doing",
       description:
-        "We build skills through hands-on hackathons, projects, and mentorship - not theory alone.",
+        "Experience is the best mentor; our events build skills through hands-on learning.",
       icon: "rocket",
     },
     {
       title: "Open & inclusive",
       description:
-        "We welcome curious minds at every stage and foster a community where everyone can contribute.",
+        "No specific backgrounds required, just curiosity and ambition.",
       icon: "sparks",
     },
   ] satisfies Principle[],
