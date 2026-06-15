@@ -1,0 +1,304 @@
+---
+import BlogPostLayout from "@/layouts/BlogPostLayout.astro";
+import { SITE } from "@data/constants";
+import { blogAuthorJsonLd, getBlogPostBySlug } from "@data/blogPosts";
+import coverUrl from "./whiteboard.png?url";
+import presentationUrl from "./presentation.png?url"
+
+const slug = "aph-hackathon-to-implementation";
+const listing = getBlogPostBySlug(slug);
+const author = listing?.author ?? "DPIN Team";
+const pubDate = listing?.pubDate ?? new Date("2026-03-15");
+
+const pageTitle = `From Hackathon to Implementation: How APH Accelerated a Municipal AI Concept | ${SITE.title}`;
+const metaDescription =
+  "How the Amsterdam Policy Hackathon moved beyond ideas to influence real policy practice — and what happened when a winning team's AI concept entered active development at the Municipality of Amsterdam.";
+const canonicalUrl = `${SITE.url.replace(/\/$/, "")}/blog/${slug}/`;
+---
+
+<BlogPostLayout
+  slug={slug}
+  pageTitle={pageTitle}
+  customDescription={metaDescription}
+  customOgTitle={pageTitle}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: "From Hackathon to Implementation: How APH Accelerated a Municipal AI Concept",
+    description: metaDescription,
+    datePublished: pubDate.toISOString(),
+    author: blogAuthorJsonLd(author),
+    publisher: {
+      "@type": "Organization",
+      name: SITE.title,
+      url: SITE.url,
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
+    url: canonicalUrl,
+    inLanguage: "en-US",
+  }}
+>
+  <article class="mx-auto max-w-2xl px-4 pb-16 pt-12 lg:max-w-3xl lg:px-6">
+    <header class="text-center">
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+        <span class="font-medium text-neutral-600 dark:text-neutral-300"
+          >By {author}</span
+        >
+        <span class="mx-2 text-neutral-300 dark:text-neutral-600" aria-hidden="true"
+          >·</span
+        >
+        <time datetime={pubDate.toISOString()}>
+          {
+            pubDate.toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })
+          }
+        </time>
+      </p>
+      <h1
+        class="mt-2 text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
+      >
+        From Hackathon to Implementation: How APH Accelerated a Municipal AI Concept
+      </h1>
+      <p class="mx-auto mt-3 max-w-2xl text-pretty text-neutral-600 dark:text-neutral-400">
+        One of the core questions behind the Amsterdam Policy Hackathon is whether
+        a hackathon can move beyond ideas and actually influence policy practice.
+        Our collaboration with the Municipality of Amsterdam suggests that it can.
+      </p>
+    </header>
+
+    <figure class="mt-10 overflow-hidden rounded-2xl border border-neutral-200 dark:border-neutral-700">
+      <img
+        src={coverUrl}
+        alt=""
+        width={1200}
+        height={630}
+        class="w-full object-cover"
+      />
+    </figure>
+
+    <div
+      class="mt-10 space-y-4 text-pretty leading-relaxed text-neutral-700 dark:text-neutral-300"
+    >
+      <p>
+        During the latest edition of APH, the municipality presented a case focused on the
+        energy transition: how could an AI-driven platform help citizens navigate complex
+        choices around sustainability — such as home insulation, energy use, and available
+        subsidies — while offering tailored, understandable advice?
+      </p>
+
+      <h2
+        class="mt-10 text-xl font-semibold text-neutral-800 dark:text-neutral-200"
+      >
+        A policy challenge with real constraints
+      </h2>
+      <p>
+        The challenge was not to design technology for technology's sake. Any solution
+        would need to be citizen-centric and accessible, translate complex policy and
+        subsidy structures into clear personal guidance, and be realistic enough to fit
+        within a municipal context. Over the course of the hackathon weekend,
+        interdisciplinary teams worked with data, policy constraints, and stakeholder
+        input to develop proposals addressing these requirements.
+      </p>
+
+      <blockquote class="my-8 border-l-4 border-[#ff0101] pl-5 dark:border-[#ff3838]">
+        <p class="text-neutral-600 dark:text-neutral-400 italic">
+          "A lot of hackathons can be abstract and have no real purpose. What I
+          especially liked about the municipality challenge is that there is something
+          concrete behind it — a tangible impact. It's a nice example to set for other
+          municipalities in the world, if it works in Amsterdam."
+        </p>
+        <footer class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">
+          — Hackathon participant
+        </footer>
+      </blockquote>
+
+      <h2
+        class="mt-10 text-xl font-semibold text-neutral-800 dark:text-neutral-200"
+      >
+        A proposal that didn't stop at the pitch
+      </h2>
+      <figure class="mt-10 overflow-hidden rounded-2xl border border-neutral-200 dark:border-neutral-700">
+        <img
+          src={presentationUrl}
+          alt=""
+          width={1200}
+          height={630}
+          class="w-full object-cover"
+        />
+      </figure>
+      <p>
+        The winning team developed a concept for an AI-supported platform that would
+        provide personalized energy advice, clearly linking individual actions to
+        financial, environmental, and practical outcomes. Their solution also created a
+        feedback loop for policymakers and analysts to learn from the needs of citizens
+        engaging with the platform. Crucially, the proposal addressed not only technical
+        feasibility, but also governance, transparency, and public trust.
+      </p>
+
+      <blockquote class="my-8 border-l-4 border-[#ff0101] pl-5 dark:border-[#ff3838]">
+        <p class="text-neutral-600 dark:text-neutral-400 italic">
+          "We didn't like the AI chatbot idea. It already exists — you can ask any
+          model, people already have that. The real issue wasn't a lack of information.
+          The gap is that people don't care, or they don't have the guidance to get the
+          information and act on it."
+        </p>
+        <footer class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">
+          — Hackathon participant
+        </footer>
+      </blockquote>
+
+      <p>
+        The team's solution instead aimed to meet citizens where they are: a platform
+        that gives personalized guidance regardless of whether you are a homeowner or a
+        renter, that doesn't feel like talking to a chatbot, and that also helps
+        policymakers understand which information was lacking and which policies were
+        working.
+      </p>
+      <p>
+        What happened next is where the story becomes unusual. Following the hackathon,
+        the municipality continued exploring the concept internally, and the idea moved
+        into further development discussions. Rather than ending as a slide deck, the
+        concept entered an active development phase within the municipal organization.
+      </p>
+
+      <h2
+        class="mt-10 text-xl font-semibold text-neutral-800 dark:text-neutral-200"
+      >
+        The value of interdisciplinary teams
+      </h2>
+      <p>
+        One of APH's defining features is that teams are deliberately composed across
+        disciplines — bringing together students and practitioners from engineering, law,
+        policy, and the social sciences. For this challenge in particular, that mix
+        proved decisive.
+      </p>
+
+      <blockquote class="my-8 border-l-4 border-[#ff0101] pl-5 dark:border-[#ff3838]">
+        <p class="text-neutral-600 dark:text-neutral-400 italic">
+          "I was the only engineer on my team. There were people from business, law, and
+          public policy. That's also a problem in other hackathons — everyone has the
+          same background. Having different angles on the same problem really makes you
+          think about what can realistically be done with an idea in the future."
+        </p>
+        <footer class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">
+          — Hackathon participant
+        </footer>
+      </blockquote>
+
+      <p>
+        That cross-disciplinary dynamic also produced unexpected breakthroughs. The
+        participant noted that their initial instinct was to focus on technical execution —
+        building a demo website. It was a teammate from a non-technical background who
+        proposed extending the platform to serve both residents and policymakers
+        simultaneously — a design choice that became central to the final concept.
+      </p>
+
+      <h2
+        class="mt-10 text-xl font-semibold text-neutral-800 dark:text-neutral-200"
+      >
+        Real feedback, in real time
+      </h2>
+      <p>
+        Beyond teamwork, the hackathon structure itself created rare access to genuine
+        stakeholder input. During the event, teams had an opportunity to receive feedback
+        from a municipal contact — a moment participants found unusually grounding.
+      </p>
+
+      <blockquote class="my-8 border-l-4 border-[#ff0101] pl-5 dark:border-[#ff3838]">
+        <p class="text-neutral-600 dark:text-neutral-400 italic">
+          "It is very nice to get actual feedback. Often it can be abstract, especially
+          for students, to get in touch with the professional side of things — to get a
+          reality check. They can point out something we're missing, or guide us in a
+          certain direction. It's again a mix of perspectives."
+        </p>
+        <footer class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">
+          — Hackathon participant
+        </footer>
+      </blockquote>
+
+      <h2
+        class="mt-10 text-xl font-semibold text-neutral-800 dark:text-neutral-200"
+      >
+        Momentum beyond the initial team
+      </h2>
+      <p>
+        The concept was later presented at the municipality's office during an internal
+        session attended by policymakers from multiple departments. As a result, nine
+        policymakers signed up to be involved in further developing the idea, signalling
+        broad internal interest and institutional ownership.
+      </p>
+
+      <blockquote class="my-8 border-l-4 border-[#ff0101] pl-5 dark:border-[#ff3838]">
+        <p class="text-neutral-600 dark:text-neutral-400 italic">
+          "The Amsterdam Policy Hackathon acted like an accelerator. It pushed the idea
+          from something abstract to something concrete that will actually be worked on."
+        </p>
+        <footer class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">
+          — Diederik Roijers, Researcher and Business Developer, Municipality of Amsterdam
+        </footer>
+      </blockquote>
+
+      <h2
+        class="mt-10 text-xl font-semibold text-neutral-800 dark:text-neutral-200"
+      >
+        Impact for participants and education
+      </h2>
+      <p>
+        This outcome is also a success for the participants involved. The team member
+        continuing the work is a student in the MSc Complex Systems and Policy at the
+        University of Amsterdam, highlighting how academic training can directly connect
+        to real-world policy innovation.
+      </p>
+
+      <blockquote class="my-8 border-l-4 border-[#ff0101] pl-5 dark:border-[#ff3838]">
+        <p class="text-neutral-600 dark:text-neutral-400 italic">
+          "It's very much worth it if you want to work on something that can bring your
+          ideas into the real world. It doesn't matter what your background is — there
+          are people with very creative energy and people with a technical background,
+          and they complement each other. If you're looking for something grounded and
+          meaningful, I'd recommend it."
+        </p>
+        <footer class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">
+          — Hackathon participant
+        </footer>
+      </blockquote>
+
+      <h2
+        class="mt-10 text-xl font-semibold text-neutral-800 dark:text-neutral-200"
+      >
+        Looking ahead
+      </h2>
+      <p>
+        For APH, this case demonstrates the value of interdisciplinary collaboration,
+        structured policy challenges, and close engagement with public-sector partners.
+        It shows that hackathons, when designed carefully, can help bridge the gap
+        between experimentation and implementation.
+      </p>
+      <p>
+        As APH expands to new cities and becomes part of the broader Data for Public
+        Impact Network (DPIN), this collaboration offers a concrete example of the kind
+        of impact we aim to support: ideas that survive beyond the weekend and contribute
+        to public value in practice.
+      </p>
+      <p>
+        Interested in joining a future event? See{" "}
+        <a
+          href="/policy-hackathons/"
+          class="font-medium text-[#ff0101] underline-offset-2 hover:underline dark:text-[#ff3838]"
+          >policy hackathons</a
+        > for hubs and announcements.
+      </p>
+    </div>
+
+    <p class="mt-12 text-center">
+      <a
+        href="/blog/"
+        class="text-sm font-medium text-[#ff0101] hover:underline dark:text-[#ff3838]"
+        >← Back to all posts</a
+      >
+    </p>
+  </article>
+</BlogPostLayout>

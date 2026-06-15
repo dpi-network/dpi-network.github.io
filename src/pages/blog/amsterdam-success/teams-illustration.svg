@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400" role="img" aria-label="Three nodes connected in a network">
+  <rect width="800" height="400" fill="#fafafa" rx="12"/>
+  <line x1="200" y1="200" x2="400" y2="200" stroke="#d4d4d4" stroke-width="3"/>
+  <line x1="400" y1="200" x2="600" y2="200" stroke="#d4d4d4" stroke-width="3"/>
+  <circle cx="200" cy="200" r="36" fill="#ff0101" opacity="0.85"/>
+  <circle cx="400" cy="200" r="36" fill="#404040" opacity="0.9"/>
+  <circle cx="600" cy="200" r="36" fill="#ff0101" opacity="0.55"/>
+  <text x="200" y="206" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="14" font-weight="700" fill="#fff">Data</text>
+  <text x="400" y="206" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="12" font-weight="700" fill="#fff">Policy</text>
+  <text x="600" y="206" text-anchor="middle" font-family="ui-sans-serif,system-ui,sans-serif" font-size="12" font-weight="700" fill="#fff">Design</text>
+</svg>

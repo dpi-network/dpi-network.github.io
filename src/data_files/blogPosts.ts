@@ -11,6 +11,7 @@
 import { SITE } from "@data/constants";
 import coverCrossDisciplinary from "../pages/blog/building-cross-disciplinary-teams/cover.svg?url";
 import coverWelcome from "../pages/blog/welcome-to-the-blog/cover.svg?url";
+import coverAmsterdam from "../pages/blog/amsterdam-success/Whiteboard.png?url";
 import coverCjbsNews from "../pages/blog/cjbs-news-28052026/cph2026-CJBS-news.jpg?url";
 
 export interface BlogPostSummary {
@@ -33,6 +34,15 @@ export interface BlogPostSummary {
 }
 
 export const blogPosts: BlogPostSummary[] = [
+  {
+    slug: "amsterdam-success",
+    title: "From Hackathon to Implementation: How APH Accelerated a Municipal AI Concept",
+    description:
+      "How a winning policy proposal turned into a municipal product",
+    pubDate: new Date("2026-06-15"),
+    coverUrl: coverAmsterdam,
+    author: "DPIN Team",
+  },
   {
     slug: "welcome-to-the-blog",
     title: "Welcome to the DPIN blog",
