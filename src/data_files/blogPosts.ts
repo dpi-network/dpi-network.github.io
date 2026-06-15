@@ -11,7 +11,7 @@
 import { SITE } from "@data/constants";
 import coverCrossDisciplinary from "../pages/blog/building-cross-disciplinary-teams/cover.svg?url";
 import coverWelcome from "../pages/blog/welcome-to-the-blog/cover.svg?url";
-import coverAmsterdam from "../pages/blog/amsterdam-success/Whiteboard.png?url";
+import coverAmsterdam from "../pages/blog/amsterdam-success/whiteboard.png?url";
 import coverCjbsNews from "../pages/blog/cjbs-news-28052026/cph2026-CJBS-news.jpg?url";
 
 export interface BlogPostSummary {
