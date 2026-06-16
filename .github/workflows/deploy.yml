@@ -17,9 +17,17 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      PUBLIC_KIT_EMBED_UID: ${{ secrets.PUBLIC_KIT_EMBED_UID }}
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v5
+      - name: Verify PUBLIC_KIT_EMBED_UID secret is set
+        run: |
+          if [ -z "${PUBLIC_KIT_EMBED_UID}" ]; then
+            echo "::error::PUBLIC_KIT_EMBED_UID secret is not set. Add it in repository settings -> Secrets." 
+            exit 1
+          fi
       - name: Install, build, and upload your site
         uses: withastro/action@v5
         with:

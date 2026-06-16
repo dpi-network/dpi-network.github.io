@@ -74,3 +74,7 @@ export const partnersData = [
         href: "#",
     },
 ]
+
+export const NEWSLETTER = {
+  embedUid: import.meta.env.PUBLIC_KIT_EMBED_UID ?? "",
+} as const;
