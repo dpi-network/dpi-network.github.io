@@ -52,19 +52,6 @@
     "dateLabel": "Recurring editions"
   },
   {
-    "id": "berlin",
-    "title": "Berlin Policy Hackathon",
-    "city": "Berlin",
-    "country": "Germany",
-    "lat": 52.5200,
-    "lng": 13.4050,
-    "url": "https://berlin.dpi.network/", 
-    "shortDescription": "German and EU policy challenges in a major capital city and political hub.",
-    "status": "upcoming",
-    "badgeDate": "Next up: TBA — follow us",
-    "dateLabel": "Recurring editions"
-  },
-  {
     "id": "oxford",
     "title": "Oxford Policy Hackathon",
     "city": "Oxford",
