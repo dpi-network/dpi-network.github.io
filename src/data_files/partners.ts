@@ -275,7 +275,7 @@ export const partners: Partner[] = [
     name: "Student Project Fund",
     section: "Community partners",
     url: "https://www.studentprojectfund.com/en/",
-    logo: "logo-spf.png",
+    logo: "spf.png",
   },
   {
     name: "Cambridge Institute for Sustainability Leadership",
